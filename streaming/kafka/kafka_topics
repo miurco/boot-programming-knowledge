@@ -1,0 +1,25 @@
+Durable logs of Events
+  - Append only
+	- Can only seek by offset, not indexed 
+
+
+KAFKA TOPIC - kind of data structure which main purpose is to store data(Messages/Events).
+
+Data in topics can be of any format (Text(Json, xml), Binary(Avro, Protobuf))
+
+Ways of accessing KAFKA TOPIC: CONSUMER and PRODUCER
+
+Kafka topics are immutable
+
+Kafka Topic and Partitions
+--------------
+
+Order is ensured within partition only
+
+Messages added to partitions have an id and these id are called kafka OFFSETS
+
+Note: Offsets are not being reused even if the the message was deleted from the topic
+
+Note: Data is randomly assigned to a partition unless a key is provided
+
+

@@ -1,0 +1,78 @@
+
+                            Ad hoc configurations
+                            
+                            Configuration manangement tools
+
+                            Server templating toolings
+
+                            Orchecstration tools
+
+                            Provisioning tools
+ 
+
+
+Configuration manangement tools
+--------
+
+coding conventions
+idempotence
+distribution
+
+Ansible, Puppet ....
+
+
+
+Server templating tools
+-------                                      +-------> Virtual Machines (that could be used by VirtualBox, Vmware ...)
+               +----------+                  |
+      code --> |  tool    | --> images ------+
+               +----------+                  |
+                                             +-------> Containers
+            Docker, Packer, Vagrant
+
+immutable infrastructure
+
+
+
+Orchestration tools 
+--------
+
+How to manage artifacts created by the server templating tools ?
+ - Deploy VM and containers images
+ - Roll out updates to an existing fleet of VMs and containers. Blue green deployment, and Canary deployment
+ - Monitor the health of your VMs and container and automatically replace unhealhy ones(auto healing)
+ - Scale the number of VMs and containers up or down in resposen to load(auto scaling)
+ - Distribute traffic across your VMs and containers(load balancing)
+ - Allow your VMs and containers to find and talk to one another over the network(service discovery)
+
+ Handling this task is the realm of orchestration tools such as Kubernetes, Marathon/Mesos, AWS ECS, Docker Swarm
+
+
+Provisioning tools
+-------
+
+Terraform, OpenStack Heat, CloudFormation
+
+
+resource "aws_instance" "app" {
+  instance_type     = "t2.micro"
+  availability_zone = "us-east-2a"
+  ami               = "ami-0c55b159cbfafe1f0"
+
+  user_data = <<-EOF
+              #!/bin/bash
+              sudo service apache2 start
+              EOF
+}
+
+
+provisioning  + server templating
+orchestration + server templating
+
+
+self-servicing
+speed and safety
+validation
+documentation
+version control
+reuse

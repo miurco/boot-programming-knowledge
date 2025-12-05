@@ -1,0 +1,28 @@
+
+                                                     engineer
+
+
+                                                     terraform
+
+
+                                                     providers
+
+
+
+
+
+                       +---------+        +---------+        +----------+     +-----------+
+                       | AWS     |        | Azure   |        | Open St..|     |Digital O..|
+                       +---------+        +---------+        +----------+     +-----------+   .......
+
+
+
+agentless
+masterless
+
+
+
+can I use terraform to provision infrastructure on local machines ?
+
+
+

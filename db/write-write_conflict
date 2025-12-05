@@ -1,0 +1,18 @@
+
+
+T1					T2
+
+W(A)
+						W(B)
+W(B)
+Com.
+						W(A)
+						Com
+
+
+We have a lost update. Any attempts to make this schedule serial would give off two different
+results(either T1's version of A and B is shown, or T2's version of A and B is shown). This 
+schedule would not be serializable!!!
+
+Strict 2PL overcomes this incosistency by locking T1 out from B. Unfortunately, deadlocks
+are something Strcit 2PL does not overcome all the time.

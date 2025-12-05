@@ -1,0 +1,49 @@
+Evaluation Rules
+==============
+
+  val
+  ----
+  keyword used to define values
+  immutable, evaluated immediately, evaluated once
+
+  lazy val
+  ---
+  immutable, evaluated when needed, evaluated once
+
+  def
+  ---
+  keyword used to define functions, the function will be evaluated when it is called
+
+  parameters passed to the function
+   - by value, will be evaluated before calling the function(that's before evaluating the function)
+   - be name, will be evaluated only when needed(that's after function evaluation)
+
+  parameters evaluation of a scala function can be
+    - strict evaluation:: by value
+    - nonstrict evaluation:: by name
+    - nonstrict evaluation:: by name -> lazy val
+
+
+    f(arg: => Int)
+
+    f(g: () => Int)
+    f(g: String => Int)
+
+
+Partially Applied Function and Currying
+============
+
+    Application
+    --------
+      The process of applying a function to its arguments in order to produce a return value.
+
+    Partial Application
+    -------
+      The process of applying a function to some of its arguments. A partially applied function gets
+      returned for later use. 
+      A function that takes a function with multiple parameters and returns a function with fewer parameters
+
+  
+    What is the use case?
+    In case the evaluation of the parameters take long time
+

@@ -1,0 +1,45 @@
+Primary source: https://opendsa.cs.vt.edu/ODSA/Books/PL/html/FreeBoundVariables.html#:~:text=A%20variable%20that%20is%20not,i.e.%2C%20declaration)%20of%20y.
+
+
+
+
+                                                                      +----------------------+
+                                                     +--------------- |  variable declaration|
+                                                     |                +----------------------+
+                            Variable occurrences ----+
+                                                     |                +----------------------+
+                                                     +--------------- |  variable use        |
+                                                                      +----------------------+
+
+                                   When there is no link between "Bound" and "Binding Occurence" then it's a free variable
+																	 Wiki: upvalue is A free variable that has been bound (closed over) with a Closure.
+                                   When the bound process happens ?
+
+
+                                +---------------------+          +-----------------------------------------+
+                                | Bound(the variable) |          | Binding Occurrence(variable declaration)|
+                                +---------------------+          +-----------------------------------------+
+
+
+
+
+
+
+                                                    Binding Scheme
+                                                          |
+                                                          |
+                                                    Static Binding
+                                         (a.k.a static scoping or lexical binding)
+             oop languages: dynamic binding is used at runtime based on object, while static at compile based on reference type
+
+
+
+
+
+                              languages with support for higher order functions with free variables
+
+
+                                    closure - a value
+                                    when is it evaluated ?
+
+

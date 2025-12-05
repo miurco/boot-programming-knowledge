@@ -1,0 +1,51 @@
+Based on their combined experience of developing software and helping others do that, the seventeen signatories to the manifesto proclaimed that they value
+
+Individuals and interactions over processes and tools
+Working software over comprehensive documentation
+Customer collaboration over contract negotiation
+Responding to change over following a plan
+
+
+Notable agile software development frameworks include:
+-------------------------
+  Adaptive software development (ASD)	Jim Highsmith, Sam Bayer
+  Agile modeling	Scott Ambler, Robert Cecil Martin
+  Agile unified process (AUP)	Scott Ambler
+  Disciplined agile delivery	Scott Ambler
+  Dynamic systems development method (DSDM)	
+  Extreme programming (XP)	Kent Beck, Robert Cecil Martin
+  Feature-driven development (FDD)	Jeff De Luca
+  Lean software development	Mary Poppendieck, Tom Poppendieck
+  Lean startup	Eric Ries
+  Kanban	Taiichi Ohno
+  Rapid application development (RAD)	James Martin
+  Scrum	Ken Schwaber, Jeff Sutherland
+  Scrumban	
+  Scaled Agile Framework - SAFe
+
+
+Agile software development practices
+----------------------------
+ 
+Practice	Main contributor(s)
+Acceptance test-driven development (ATDD)	
+Agile modeling	
+Agile testing	
+Backlogs (Product and Sprint)	Ken Schwaber
+Behavior-driven development (BDD)	Dan North, Liz Keogh
+Continuous integration (CI)	Grady Booch
+Cross-functional team	
+Daily Stand-up / Daily Scrum	James O Coplien
+Domain-driven design (DDD)	Eric Evans
+Iterative and incremental development (IID)	
+Pair programming	Kent Beck
+Planning poker	James Grenning, Mike Cohn
+Refactoring	Martin Fowler
+Retrospective	
+Scrum events (sprint planning, sprint review and retrospective)	
+Specification by example	
+Story-driven modeling	Albert Zündorf
+Test-driven development (TDD)	Kent Beck
+Timeboxing	
+User story	Alistair Cockburn
+Velocity tracking

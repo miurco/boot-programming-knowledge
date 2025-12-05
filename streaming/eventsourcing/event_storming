@@ -1,0 +1,74 @@
+If you analyze the domain you are designing the architecture
+  Agile space: give us the ability to make quick changes. That's agile, and does not have nothing with daily scrums.
+
+Bounded Context
+-----------------
+  BOUND CONTEXT = MICROSERVICE => WRONG!!! A microservice is more an EVENT
+  BOUND CONTEXT has Entities, not to be confused with DDD entities or data base entities
+  Within BOUND CONTEXT an ubiquitous language should exists
+  ENTITIES within BOUNDED CONTEXT usually are MICROSERVICES.
+
+  Summary: Within a bounded context exists one or multiple microservices which could be seen at some degree as DDD entitites. Also a separate microservice(entity) could play role of an aggregate. Aggregate is self contained thing - the things into aggregate don't leak out.
+
+
+          +----------------------------------------------------------+
+          |               bound context                              |
+          |                                                 +------------------------------------------+
+          |            +---------+      +---------+         |           entity3                        |
+          |            | entity1 |      | entity2 |         |  (kind of root aggregate)                |
+          |            |         |      |         |         |  (responsible for outside interaction)   |       
+          |            +---------+      +---------+         +------------------------------------------+
+          |                 |                                        |
+          |                 |   entities communicate with each other |
+          |                _|_                                       |
+          |                \ /                                       |
+          |                 '                                        |
+          | This entity may represent a microservice/module/subdomain|            
+          | Within this entity we can have one or more DDD entities  |                 
+          |                                                          |
+          |   In DDD world entities communicates. How? Asynch-       |
+          |   -rounously. Even in Eric Evans book the advice is      |
+          |   to do it through events.                               |
+          |                                                          |
+          |  How do you find the events? EVENT STORMING is one way!  |
+          |                                                          |
+          +----------------------------------------------------------+
+
+
+Good definition of a Story
+-----------------
+Story - A short narative that describe a user performing a domain process that results in a valuable outcome for that user
+
+
+Event Storming
+-----------------
+Participants to the meeting: domain experts, PO, customer, engineers
+Outcome: is to come up with an Event Model that will work to solve a specific Story
+One Story at a time
+
+
+Events are laid out in the timeline
+
+				1.Place the event(Order Placed)
+				2.What activity should be taken when event received, (Pick items)
+				3.Decide who should do this activity, (Warehouse), aggregate/context
+
+				We may have a question(how do we do that), downstream work(Pick list), policy(items over 50 pounds requires special handling)
+
+				It's a simultanious business analysis process and a architecture design process
+
+item found:
+item displayed:
+item added to cart:
+ cart purchased:
+				order accepted:
+								customer notified,
+								order shipped:
+												tracking info received:
+																customer notified
+																delivery notification received
+								payment accepted
+
+
+
+

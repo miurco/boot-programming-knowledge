@@ -1,0 +1,92 @@
+                                                SPACE BASED ARCHITECTURE
+                                                =======================
+
+
+Cloud is an implementation of space based architecture
+
+
+The name comes from computer science concept called "tuple space"
+
+
+Tuple spaces - defined as multiple parallel processes that share a memory address
+
+
+
+
+
+
+                                               +--------------------------------------+
+                                               |            processig unit            |
+                                               |                                      |
+                                               |      module    module   module       |
+                                               |                                      |
+                                               |                                      |
+                                               |                                      |
+                                               |         in memory data grid          |
+                                               |                                      |
+                                               |         data replication engine      |
+                                               |                                      |
+                                               |                                      |
+                                               +--------------------------------------+
+
+                                                                
+                      +---------------------------------------------------------------------------------------------------------+
+                      |                                        virtualized middleware                                           |
+                      |     +-----------------+        +-------------------+    +--------------------+  +--------------------+  |
+                      |     | Messaging grid  |        | Data grid         |    | processing grid    |  |deployment manageer |  |
+                      |     +-----------------+        +-------------------+    +--------------------+  +--------------------+  |
+                      |                                                                                                         |
+                      |                                                                                                         |
+                      |                                                                                                         |
+                      +---------------------------------------------------------------------------------------------------------+
+
+
+
+      very expensive to implement
+      testing is hard
+
+
+       Product implementations
+                      
+
+                  javaspaces
+                  gigaspaces
+                  ibm object grid
+                  gemfire
+                  ncache
+                  oracle coherence
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

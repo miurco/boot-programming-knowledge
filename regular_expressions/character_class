@@ -1,0 +1,32 @@
+POSIX CHARACTER CLASSES
+------------------
+
+alnum: letters and digits [a-zA-Z0-9]
+alpha: letters [a-zA-Z]
+digit: digits [0-9]
+lower: lower case letters [a-z]
+space: white space [ \t\n\f\r] and VT
+upper: upper case letters [A-Z]
+word: word characters [a-zA-Z0-9_]
+
+how to use ?
+[[:CLASS:]]
+
+[[:lower:]]
+[[:^lower:]]
+
+
+GENERIC CHARACTER CLASSES
+-------------------
+\d: digit [0-9]
+\D: non-digit [^0-9]
+\w: word [a-zA-Z0-9_]
+\W: non-word [^a-zA=Z0-9_]
+\s: space character [ \t\n\r\f]
+\S: non-space character [^ \t\n\r\f]
+
+
+grep '\d\d\d'
+grep [[:digig:]][[:digit:]]
+
+find coffee_shop ! -name "*.xml" -and ! -name "*.lock" -and ! -name "*.bin" -and type f -and exec grep -f regex -H -i --color {} \;

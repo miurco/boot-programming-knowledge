@@ -1,0 +1,9 @@
+
+Data engineering deals with storing data at scale and delivering that data to applications.
+It includes moving data to the cloud, building pipeline for aquiring data and getting data to application software, etc.
+
+
+Two of the most importan platform for data engineering, Kafka, and Spark
+
+
+New streaming platform like Pulsar, and newer data platform like Ray.

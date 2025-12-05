@@ -1,0 +1,48 @@
+
+                     +-------------------+
+             +-------|Overall Structure  |
+             |       +-------------------+
+             |
+             |
+             |
++-----------------------------+
+|                             |
+|   Architecture decisions    |
+|                             |
+|   Architecture principles   | -------> This is what make up an architecture
+|                             |
+|   Design principles         |
+|                             |
++-----------------------------+
+
+
+The overall structure: microkernel, layered, microservice
+
+
+In layered architecture:
+        ARCHITECTURE DECISION:
+        The components and classes within the business and service layer are the only one that can talk to the persistence layer
+
+In microservice architecture:
+        DESING PRINCIPLE:
+        Inter-service communications should leverage async messaging whenever possible to increase performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

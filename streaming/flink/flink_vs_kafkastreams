@@ -1,0 +1,89 @@
+
+
+Kafka Streams vs Flink
+
+
+| Feature              | Kafka Streams                                         | Appache Flink                                                        |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| Processing Model     | Library-based, embedded in your app                   | Clustered system, job submission to Flink runtime                    |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| Latency              | Optimmized for low-latency stream processing          | Low latency, also supports complex windowing and stateful operations |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| State Management     | RocksDb for local state                               | Highly scalable state backend(local + distributed options)           |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| Fault Tolerance      | Kafka topic-based checkpointing                       | Distributed snapshots with finer control over consistency.           |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| Integration          | Limited source/sinks(Kafka-centric)                   | Broad connectors (Kafka, AWS, JDBC, files, etc.)                     |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| Programming Paradigm | Lightweight API for stream processing.                | Rich API for batch + stream processing                               |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+| Complexity           | Easier to integrate into existing Spring or Java apps | More complex to operate(requries cluster)                            |
+|----------------------+-------------------------------------------------------+----------------------------------------------------------------------|
+
+
+--------------------------------------
+--------------------------------------
+
+Why Flink would be used insstead of existing components ?
+
+a) Complex Event Processing
+		Flink's powerfull stateful processing and windowing capabilities make it better for advanced filtering, enrichment, and aggregations compared to Kafka Streams.
+		Example: Filtering events based on sliding windows(e.g last 10 minutes)
+
+b) Flink supports both stream and batch processing, meaning it can group events in near real-time more efficiently than Kafka Streams
+		Example: Building micro batchers before sending to BY
+
+c) Flink can connect to a wide variety of sources (databases, APIs, cloud storage) and sinks, potentially replacing both the source and filter components
+
+
+--------------------------------------
+--------------------------------------
+
+Advanced State Management
+	Flink can handle large, distributed, fault-tolerant states better than Kafka Streams.
+	Example: If you're doing complex transformations or keeping track of aggregations accros many keys.
+
+Scalability
+	Flink runs on a dedicated cluster, so it's designed for heavy workloads, whereas Kafka Streams scales horizontally but has limitations in state-heavy applications.
+
+Unified Batch/Streaming Processing
+	Flink processes data in both real-time and batch modes, whereas Kafka Streams is strictly stream-based
+	Example: Handling both historical reprocessing and live updates in the same pipeline.
+
+Connector Ecosystem
+	If you are working with system outside Kafka(e.g databases, S3, HDFS, etc), Flink has a much richer set of connectors.
+
+--------------------------------------
+--------------------------------------
+
+What Flink Would Replace ?
+
+The filter, batcher, and potentially the source component in your pipeline could all be replaced by a single Flink Job.
+Flink jobs can read from Kafka, process data(filtering, aggregation, enrichment), and write back to Kafka or directly to BY.
+
+
+--------------------------------------
+--------------------------------------
+
+Benefits
+
+Improved Efficiency
+	Flink handles state and streaming workloads better for complex pipelines.
+
+Unified Processing
+	Can consolidate multiple pipeline stages into a single job, reducing Kafka topic hops.
+
+Flexibility
+	Offers richer semantics for handling late events, out-of-order processing, and complex windowing.
+
+Reprocessing Support
+	Flink can handle historical replays more easily using its batch mode
+
+--------------------------------------
+--------------------------------------
+
+Potential Drawbacks
+
+Operational Complexity
+	Requires managing a Flink cluster, whereas Kafka Streams embeds directly into microservices.
+

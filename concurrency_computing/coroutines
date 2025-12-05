@@ -1,0 +1,16 @@
+
+Coroutine are computer program components that generalize subroutines for non-preemtive multitasking
+
+Relationship between coroutines isn't that of caller-calle, but instead symetric
+
+Well-suited for implementing familiar program components such as
+    cooperative tasks, exception, event loops, iterators, infinite lists and pipes
+
+
+
+See: Subroutines, Generators
+
+
+
+
+

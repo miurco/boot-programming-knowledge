@@ -1,0 +1,39 @@
+Fake
+Stub
+  used for providing the tested code with "indirect input"
+Spies
+Mock
+  used for verifying "indirect output" of the tested code, by the first defining the expectation before the tested code is executed
+
+
+Two concepts that will help
+  - indirect outputs ----> Mock
+  - indirect inputs ----> Stub
+
+
+
+// provide inputs to the tested code
+    when(stub.doSomething("hello")).thenReturn(1)
+    exersie sut
+
+// verifying indirect output of the tested code
+    verify()
+    exersise sut
+
+
+There are two styles of mocking
+  - Expectations-first style
+  - Record-then-verify style
+
+
+
+
+Expectations-first style
+============
+ Expectation are set on mock objects before exercising the system under test.
+
+
+Record-then-verify style
+============
+( This is the mockito style)
+Expectation are verified after the system under test has executed

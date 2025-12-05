@@ -1,0 +1,45 @@
+Two-phase locking is a pessimistic concurrency control method that guarantees
+conflict-serializability.
+
+
+By 2PL protocol, locks are applied and removed in two two-phases
+   1. Expanding phase: locks are aquired and no locks are released
+   2. Shrinkning phase: locks are released and no locks are aquired
+
+Two types of locks are used by the basic protocol: Shared and Exclusive locks.
+
+
+Rules of read(shared) and write(exclusive) lock
+-----------------------------
+
+1) A transaction is allowed to read an object if and only if it is holding a read-lock or write-lock
+on that object
+
+2) A transaction is allowd to write an object if and only if it is holding a write-lock on that object.
+
+3) A schedule(set of transactions) is allowed to hold multiple locks on the same object 
+simultaneously if and only if none of those locks are write-locks.
+
+
+Variants
+----------
+guarantees: 
+	conflict serializability(2PL, C2PL, S2PL, SS2PL)
+	view serializability
+	recoverability
+	strictness
+
+prevents:
+	phantom reads
+	dirty reads
+
+eliminates:
+	deadlocks (C2PL)
+
+C2PL Conservative two phase locking - C2PL's transactions obtain all the locks they need before the transactions begin.
+
+S2PL
+
+SS2PL
+
+2PL

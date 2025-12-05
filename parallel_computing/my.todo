@@ -1,0 +1,31 @@
+Paralle computing:
+
+
+  ☐ Make a clear distinction between parallel computing and concurrent computing
+
+  ☐ The question is how does a programmer express this parallel computations ?
+
+
+  ✓ OpenMP, MPI, C++AMP, POSIXThreads --- what are this ? @done2021-02-22 09:57)() @project(Paralle computing)
+      This are parallel programming models/parallel execution models
+          where OpenMP, POSIXThreads uses shared memory as the communication between processes
+
+
+
+Errors to be corrected:
+  So from this moment Threads doesn't represent anymore the absolut truth about parallel computing
+  Parallel computing is the kind of computation where two tasks/processes/ could be executed simultaneously on different cpus
+
+
+  How is this implimented ? parallel execution models can help here
+
+
+
+  Concurrency computing: java and c# are systems that interact and communicate between concurrent components using shared memory
+  Parallel computing;   
+
+
+
+
+
+

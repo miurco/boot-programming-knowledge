@@ -1,0 +1,10 @@
+
+Takeways
+
+ - Delegation of work through supervised workers allows for higher levels of concurrency and fault tolerance.
+ - Workers are asynchrounous and run concurrently, neverr sitting idle as in synchronous systems.
+ - Efficient utilization of system resources (CPU, memory, and threads) results in reduced infrastructure costs.
+ - It's simple to scale elastically at the actor level by increasing or decreasing workes as needed.
+ - Using clusters gives the ability to scale at the system level.
+
+

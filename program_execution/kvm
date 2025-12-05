@@ -1,0 +1,48 @@
+Kernel-based Virtual Machine
+
+
+Under KVM, the Linux kernel itself serves as the hypervisor(monitoring virtual machines)
+Memory management and scheduling are handled through the host's kernel, and guest machines are normal Linux processes
+
+
+    Benifits
+    ========
+
+    1) Complexity introduced by multicore cpus are handled by kernel, and no hypervisor change
+    2) Linux commands such as ps, top, kill show and control virtual machines
+
+
+
+KVM installation and usage
+--------------------------
+
+virt-install, to create new KVM guests
+virsh, to manage the KVM guests
+libvirt, as dependency
+
+
+
+The host must be cofigured to support networking in the guests
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

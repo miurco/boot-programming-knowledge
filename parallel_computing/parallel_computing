@@ -1,0 +1,74 @@
+
+                                              PARALLEL COMPUTING
+                                        
+       Form of computation where multiple calculations or the execution of processes are carried out simultaneously
+           Large problems can often be devided into smaller ones, which can be solved at the same time
+
+
+
+BACKGROUND
+=========
+
+Parallel computing is closely related to concurrency computing
+In parallel computing a computational task in broken in smaller task of the same kind and processed independently and whose results are combined afterwards upon completion. See java JoinTask
+
+In concurent computing the various processes often do not address related tasks; when they do, as is typical in distributed computing, the separates tasks may have a varied nature and often
+require some inter-process communication during execution
+
+
+            DEPENDENCIES
+            =========
+            Understanding data dependencies is fundamental in implementing parallel algorithms. No program can run more quickly than the longest chain of dependent calculations
+
+
+            1: function Dep(a,b)
+            2: c : = a * b
+            3: d : = c * 3
+            4: end function
+            2,3 can't be executed in parallel
+
+
+
+
+            FINE-GRAINED, COARSE-GRAINED, AND EMBARRASING PARALLELISM
+            =========
+            Applications are often classified according to how often their subtasks need to synchronize or communicate with each other
+
+            An application exhibits 
+                       - fine-grained parallelism if its subtasks must communicate many times per second
+                       - coarse-grained parallelism if they don't communicate many times per second
+                       - embarrasing-parallelism if they rarely or never have to communicate
+            Embarrasing-parallel applications are considered the easiest to parallelize
+
+                
+
+            CONSISTENCY MODELS
+            ========
+
+
+TYPES OF PARALLELISM
+=======
+        Bit Level Parallelism
+        Instruction Level Parallelism
+        Task Parallelism
+
+
+HARDWARE
+=======
+
+        Memory and communication
+        Classes of parallel computers
+            - multi core computing
+            - symmetric multiprocessing
+            - distributed computing
+            - cluster computing
+            - massively parallel computing
+            - grid computing
+            - GPGPU
+            - vector processing
+            - cloud computing
+
+
+
+PARALLEL PROGRAMMING LANGUAGES
+=======

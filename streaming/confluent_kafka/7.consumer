@@ -1,0 +1,18 @@
+
+KafkaConsumer,
+
+consumer.subscribe(List of topics you want to read from)
+
+
+When messages are available on a topic they come back as
+
+ConsumerRecords
+
+ConsumerRecord - represent the Key/Value pair of the Event
+
+topic with 10 partitions, add 10 consumer, rebalancing will take place and each consumer will be assigned to a partition
+the 11th consumer will be idle
+
+
+
+Rule: Kafka redestributes partitions among the available consumers to maintain the rule that each partition is consumed by one consumer within the group

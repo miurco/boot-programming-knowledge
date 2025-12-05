@@ -1,0 +1,68 @@
+
+Kafka is a distributed system, but it is also possible to install and run it on a single host.
+
+
+zookeper before any Kafka brokers
+
+three-node cluster
+server0;server1;server2
+
+1. start zookeper
+2. start kafka broker 
+3. create topics
+
+
+Kafka Cluster ?
+Node ?
+Broker ?
+
+
+
+Zookeeper higly available, scalable, distributed, configuration, consensus, group membership
+, leader election, naming, and coordination service.
+
+Zookeeper guaratees:
+>>>clients will never detect old data
+>>>clients will get notified of a change to data they are watching within bounded period of time
+>>>all requests from a client will be processed in order
+>>>results received by client will be consistent with results received by all other clients
+Zookeper usecase:
+>>>configuration management
+>>>leader election
+>>>group membership
+>>>work queues
+>>>cluster management
+>>>load balancing
+>>>sharding
+
+Zookeeper is required to manange distributed brokers
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,66 @@
+
+Process management
+
+      starting, pausing, resuming, scheduling and terminating
+
+
+time slice - time given to a process to use cpu
+multitasking
+
+
+
+                                                                                                     process A
+                                          process B                                             +---------------------------+
+                                        +---------------+                                       |                           |
+                                        |+-------+      |                                       |+-------+  +-------+       |
+                                        ||1      |      |                                       || 1     |  | 2     |       |
+                                        |+-------+      |                                       |+-------+  +-------+       |
+                                        +------+--------+                                       +-----------+---------------+
+                                               |                                                            |
+                         +---------------------+-------------------------------+                            |
+                         |                     1                               |         +------------------+---------------------------+
+                         | +-----------+   +--------------+  +--------------+  |         |     2                               1        |
+                         | |  cpu 1    |   | cpu 2        |  | cpu 3        |  |         |  +----------+  +-------------+  +----------+ |
+                         | +-----------+   +--------------+  +--------------+  |         |  |  cpu 1   |  | cpu 2       |  | cpu 3    | |
+                         +-----------------------------------------------------+         |  +----------+  +-------------+  +----------+ |
+                                                                                         +----------------------------------------------+
+process B: has been defined using single time line execution model
+process A: built using parallel programming models/execution environments
+
+
+
+when kernel runs? It runs between process time slices during context switching
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

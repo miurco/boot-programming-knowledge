@@ -1,0 +1,46 @@
+
+Layered architecture
+====================
+
+
+  presentation layered 
+  business layer
+  persistence layer
+  database layer
+
+
+Side effects of this architecture
+=============
+
+Each of this layer are closed
+Separation of concerns
+Layers of isolation
+
+
+There are lots of hybrids and variants in architectural patterns in general and in layered architecture specifically
+
+    Presentation Layer
+    Business Layer
+      Service Layer
+    Persistence Layer
+    Database Layer
+
+
+PATTERN GOVERNANCE
+  Don't go against it
+
+
+
+
+                                                      LAYERED ARCHITECTURE
+
+
+
+                  | agility | deployment | testability | performance | scalability | simplicity | cost |
+                  +=========+============+=============+=============+=============+============+======+
+                  | suck    | suck       | good        | suck        | suck        | good       | $    |
+                  +---------+------------+-------------+-------------+-------------+------------+------+
+
+
+
+Next, another style of monolitic architecture - microkernel architecture

@@ -1,0 +1,27 @@
+Every keybinding lives in a key table . There are three built-in key tables:
+
+
+
+prefix
+=======
+
+<C-b> - trigger the binding
+
+Keys in this table must be pressed after the prefix <C-b> to trigger the binding
+
+This is the table that the <bind> command uses by default
+
+
+root
+======
+
+Keys in this table can just be pressed, without any prefix
+
+Use -n (a shortcut for -T root) to bind keys int this table.
+
+Example: bind -n C-t new-window
+
+
+
+
+

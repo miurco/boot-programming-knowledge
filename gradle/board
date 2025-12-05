@@ -1,0 +1,46 @@
+Gradle Philosophy
+-----------------
+
+
+It starts with the way JVM is running/executing a program i.e class or a jar file. Also think of the --classpath option.
+
+Think of a world where you would only have the following tools
+javac - for compiling the files
+java - for execution of jvm programs
+
+
+how would you compile multiple files ?
+how would you group your files conceptually and why ?
+by running few scenarios through your mind can you spot the pain points, what are they ?
+
+
+Gradle is providing the concept of a Source Set that is used to
+1. Group source files conceptually
+     For example when developing a source of files used to test what you build is correct 
+2. Build the final artifact i.e a jar file that could be executed by jvm 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4 @@
+
+virtual function or method is an inheritable and overridable function for which dynamic dispatch is facilitated
+
+this concept is imortant part of the polymorphism portion of OOP

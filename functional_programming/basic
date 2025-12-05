@@ -1,0 +1,94 @@
+GLOSSARY
+
+variable capture
+-----------------
+A free variable occurrence is captured when it becomes bound following the renaming of some other variable occurrence.
+
+binding occurrence
+-------------------
+A binding occurrence is the place in a program where a variable is bound to its name (or identifier). In modern programming languages, a binding occurrence is the same as a declaration of the variable. In lambda calculus, a binding occurrence for, say, the variable x
+, is any sub-expression equal to λx.
+
+==================================
+
+variable occurrences: variable declaration and variable use
+
+In computer programming, the term free variables referes to variables used in function that are neither:
+ 
+ - local variable 
+ - nor parameters of that function.
+
+"non local variable" synonym with "free variable"
+
+Free and Bounded variables
+binding scheme: static binding(a.k.a static scoping, or lexical binding)
+
+
+bound(the variable) <---------->binding occurrence(the declaration)
+
+https://opendsa.cs.vt.edu/ODSA/Books/PL/html/FreeBoundVariables.html#:~:text=A%20variable%20that%20is%20not,i.e.%2C%20declaration)%20of%20y.
+
+
+
+First-class functions languages - Programming languages that treats functions as first-class citizens.
+-------------------------------
+
+ - passing functions as arguments to other functions
+ - returning them as values from other functions
+ - assingning them to variables or storing them in data structures
+
+	First-class functions are a necessity for the functional programming style, in which the use of higher-order functions is a standard practice.
+
+	 Languages where functions are not first-class often still allow one to write higher-order functions through the use of features such as function pointers or delegates. In the language C:
+
+	 void map(int (*f)(int), int x[], size_t n) {
+			for (int i = 0; i < n; i++)
+						x[i] = f(x[i]);
+	 }
+
+Anonymous Functions - a.k.a function literals. Name of functions do not have any special status
+-------------------
+
+
+Closure - is a technique for implementing lexically scoped name binding in a language with First-class functions.
+Operationally, a closure is a record storing the function toghether with an environment. 
+
+Unlike a plain function, a closure allows the function to access those captured variables through the closure's copies
+of their values or reference, even when the function is invoked outside their scope.
+
+Closure is often used as a synonym for anonymous function, though strictly, an anonymous function is a function literal without a name
+, while a closure is an instance of a function, a value, whose non-local variables have been bound either to values or to storage locations 
+
+
+
+Python code:
+
+
+def f(x):
+	def g(y):
+		return x + y
+	return g # Return a closure.
+
+def h(x):
+	return lambda y: x + y # Return a closure.
+
+# Assigning specific closures to variables
+a = f(1)
+b = h(1)
+
+# Using the closures stored in variables.
+assert a(5) == 6
+assert b(5) == 6
+
+# Using closures without binding them to variables first.
+assert f(1)(5) == 6 # f(1) is the closure
+assert h(1)(5) == 6 # h(1) is the closure
+
+last two lines are annonymous closure
+
+Application of Closure
+------------------
+
+The use of closures is associated with languages where functions are first-class objects
+, in which functions can be returned as results from higher-order functions, or passed as arguments to other function call; if functions with free variables are firt-class, then returning one creates a closure.
+

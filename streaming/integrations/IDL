@@ -1,0 +1,58 @@
+
+Sample Data
+{
+    "userName": "Martin",
+    "favoriteNumber": 1337,
+    "interests": ["daydreaming", "hacking"]
+}
+
+
+
+Thrift IDL for Sample Data
+------------
+
+		struct Person {
+			1: required string       userName,
+			2: optional i64          favoriteNumber,
+			3: optional list<string> interests
+		}
+
+1) BinaryProtocol
+2) CompactProtocol
+
+
+Protocol Buffers IDL for Sample Data
+------------
+
+		message Person {
+				required string user_name       = 1;
+				optional int64  favorite_number = 2;
+				repeated string interests       = 3;
+		}
+
+
+Avro
+------------
+
+Two	schema languages
+1) Avro IDL, intended for human editing
+2) JSON, is more easily machine-readable 
+
+Avro IDL
+record Person {
+    string               userName;
+    union { null, long } favoriteNumber = null;
+    array<string>        interests;
+}
+
+JSON
+{
+    "type": "record",
+    "name": "Person",
+    "fields": [
+        {"name": "userName",       "type": "string"},
+        {"name": "favoriteNumber", "type": ["null", "long"], "default": null},
+        {"name": "interests",      "type": {"type": "array", "items": "string"}}
+    ]
+}
+	

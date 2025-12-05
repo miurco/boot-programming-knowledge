@@ -1,0 +1,39 @@
+
+[v] What is the domain of transaction isolation levels
+    Answer: an evironment with concurrent transactions.
+
+[v] What is concurrency control implementation used for each of transaction level isolation ?
+   A pessimistic concurrency control method like Two-phase locking(2PL) that guarantees conflict-serializability.
+	 The Protocol uses locks, applied by a transaction to data, which may block other transactions from accessing the same data during the transaction's life.
+
+https://learn.microsoft.com/en-us/sql/t-sql/statements/set-transaction-isolation-level-transact-sql?view=sql-server-ver16
+
+Transaction isolation levels control the following effects:
+	- Wheather locks are taken when data is read, and what type of locks are requested.
+	- How long the read locks are held.
+	- Wheather read operations referencing rows modified by another transaction:
+		- Block until the exclusive lock on the row is freed.
+		- Retrieve the commited version of the row that existed at the time the statement or transaction started.
+		- Read the uncommitted data modification
+
+
+
+
+| Isolation Level  | Locking strategy                                                                                 |
+|------------------+--------------------------------------------------------------------------------------------------|
+| Read Uncommitted | Read: No Lock acquired                                                                           |
+|                  | Write: No Lock acquired                                                                          |
+|------------------+--------------------------------------------------------------------------------------------------|
+| Read committed   | Read: Shared lock acquired and released as soon as read is done                                  |
+|                  | Write: Exclusive lock acquired and keep till end of transaction                                  |
+|------------------+--------------------------------------------------------------------------------------------------|
+| Repeatable read  | Read: Shared lock acquired and released only at the end of the transaction                       |
+|                  | Write: Exclusive lock acquired and released only at the end of the transaction                   |
+|------------------+--------------------------------------------------------------------------------------------------|
+| Serializable     | same as "Repeatable read" + apply Range lock and lock is only released at the end of transaction |
+|------------------+--------------------------------------------------------------------------------------------------|
+
+
+Read commited - Each Query in a Transaction only sees commited stuff
+
+Repeatable read - Each Query in a transaction only sees committed updates at the beggining of transaction

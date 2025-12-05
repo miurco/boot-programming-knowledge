@@ -1,0 +1,114 @@
+Actors
+=======
+
+
+- Actors exchange messages asynchronously.
+- Actors typically are set up to handle all contingenices, both when things work as expecdted and how to handle the unexpected
+- Actors can create other actors in a supervisor-worker relation-ship
+- Supervisors can delegate tasks to workers, and also take care of workers that run into problems.
+
+
+
+
+Actors and Scaling Large Systems
+==================
+
+
+    One actor is no actor. Actors come in systems.
+      - Carl Hewitt
+
+
+
+
+                                                  *********   
+                                              ****Supervisor****
+                                                  *********   
+                                                 ___ |____          
+                                            ____/     \   \_____    
+                                         __/           \        \___
+                                       *****         *****        *****  
+                                    ***11111***   ***22222***   **33333**
+                                       *****         *****        *****  
+
+Set time out on iddle - this way the worker initiate the process of shuting down itself
+This could be used for scaling in when there is a decrease in load
+How do you scale out ?
+A: The supervisor actor is in charge for this I guess
+
+
+
+ACTOR SYSTEMS
+=============
+
+
+Actors exists within an actor system. And the process of actor sending asynchronous messages to each other is handled by the actor system
+Yet an actor system provides much more than just the protocol for messaging between actors; it is also designed to manage actor activities
+by allocating the system resources needed to suppprot the actor environment.
+
+
+How the system allocate system resources at a conceptual level ?
+What is the difference between synchronous(Threads) vs asynchronous approach(Actors)
+
+
+                                                            |
+                                                            |
+              __________________________                    |         
+              |  Your application      |                    |        +--------------------------+
+              +------------------------+                    |        |  your application        |
+              |     Memory             |                    |        +--------------------------+
+              |t1  t2  t3  t4  t5  t6  |                    |        |  a1 a2 a3 a4 a5 a6 a7... |
+              +------------------------+                    |        +--------------------------+
+              +-------+       +-------+                     |        |                          |
+              | core1 |       | core2 |                     |        |  Actor System(akka)      |
+              +-------+       +-------+                     |        +--------------------------+
+                                                            |        |      Memory              |
+                                                            |        |t1         t2        t3   |
+                                                            |        +--------------------------+
+                                                            |
+                                                            |        +-----+             +-----+
+                                                            |        |core1|             |core2|
+                                                            |        +-----+             +-----+
+                                                            |
+                                                            |
+                                                            |
+          Traditional Systems - Dumb Threads                |       Asynchronous Systems - Using Actor Model
+                                         
+                                         
+                       
+
+The concurency in traditional system are limited by the number of threads while in actor systems it is limited by the number of actors
+
+Actor systems is constantely moving the threads around to various actors trying to maintain a fair distribution of thread usage
+without letting some actors dominate their time with threads or conversely, let some actors be starved for attention
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

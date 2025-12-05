@@ -1,0 +1,35 @@
+java.net
+java.net.http
+
+
+
+Socket identifies an endpoint in a network. Socket allows a single computer to serve many different clients at once.
+This is accomplished through the use of a port, which is a numbered socket on a particular machine.
+
+
+
+                                            A server is allwoed to accept multiple clients on the same port.
+                                            To manage multiple client connections a server process must be multithreaded.
+              client__                       
+                      \___                 +---------------------+
+              client___   \__              | server process      |
+                       \___  \___          |   +------------+    |
+              client____   \___  \_---+    |   |  session 1 |    |
+                        \_____ \__| p |----|S  +------------+    |
+                              \___+---+    |   +------------+    |
+                                           |   |  session 2 |    |
+                                           |   +------------+    |
+                                           |   +------------+    |
+                                           |   |  session 3 |    |
+                                           |   +------------+    |
+
+                                           |                     |
+                                           |                     |
+                                           +---------------------+
+
+
+
+
+
+
+What is the communication protocol a socket is using ? TCP and IP

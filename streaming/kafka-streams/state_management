@@ -1,0 +1,48 @@
+
+RocksDb
+-------------
+Local persitent storage
+	Embedded key-value store
+	Optimized for fast read/write operations
+	Stores local state on the stream processing node
+
+
+Changelog
+-------------
+Distributed state replication
+	Kafka topic for state store backup
+	Logs all state changes as Kafka records
+	Enable state reconstruction and recovery
+	Provides a distributed, fault-tolerant state backup
+	Allows state restoration across different nodes
+
+| Aspect             | RockDB                  | Changelog              |
+|--------------------+-------------------------+------------------------|
+| Storage location   | Local node              | Kafka cluster          |
+|--------------------+-------------------------+------------------------|
+| Primary purpose    | Local state persistence | State replication      |
+|--------------------+-------------------------+------------------------|
+| Recovery mechanism | Local disk              | Distributed topic      |
+|--------------------+-------------------------+------------------------|
+| Performance        | High-speed local access | Networ based retrievel |
+|--------------------+-------------------------+------------------------|
+
+
+Recovery Flow
+--------------
+
+Task = [Input partition topic] + [Stream Topology]
+Task has
+- Local state
+- Topology
+- Consumer Thread
+- Producer Thread
+
+Events come from Kafka topics
+Tasks process events and update RocksDB
+Updates are also written to changelog topics
+Offsets are checkpointed locally
+On failure:
+		Another instance picks up the task
+		Replays changelog to restore state
+		Resumes from last checkpointed offset

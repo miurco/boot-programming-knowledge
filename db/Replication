@@ -1,0 +1,35 @@
+Duplicating data across multiple servers.
+
+The primary goal: is to enhance data availabilty, reliabilty and resiliency
+
+
+                                       +------------+
+                               +-------+ Strategies +------+
+                               |       +------------+      |
+                               |                           |
+                               |                           |
+                               |                           |
+                        +------------+               +---------------+
+                        |master-slave|               |leader-follower|
+                        +------------+               +---------------+
+
+
+
+
+                   +--------+      +--------+     +--------+
+                   |        |      |        |     |        |
+                   +--------+      +--------+     +--------+
+                               \       |        /
+                                \      |       /
+                                 \     |      /
+                                  \    |     /
+                                   \   |    /
+                                    \  |   /
+                                          
+                                      Data
+
+
+
+
+
+

@@ -1,0 +1,27 @@
+Subshells
+---------
+
+Process list
+-------------
+
+    (pwd ; ls)
+    (sleep 5 ; pwd ; echo  '\n' ; ls)
+    (sleep 2 ; echo 'ti cio')
+
+
+Pipes
+------
+
+Co-processes
+------------
+    coproc (tar -xf xx.tar obj1 obj2; ls)
+
+
+
+A shell instance can be started in multiple ways
+
+-c string, Reads commands from string and process them
+-i, Starts an interactive shell, allwoing input from the user
+-l, Acts as if invokes as a login shell
+-r, Starts a restricted shell, limiting the user to the default directory
+-s, Reads commands from the standard intput

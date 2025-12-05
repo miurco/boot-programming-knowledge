@@ -1,0 +1,21 @@
+
+In computing, a processor, or processing unit is a digita circuit which performs operations on some external data source, usually memory or some other
+data stream
+
+
+Processor are something general that could be applied in different areas, that's why there are multiple processors type by their applience
+
+
+CPUs
+ - If designed conforming to the von Neuman architecture, it contains at least a control unit, arithimetic logic unit and processor register
+GPU
+VPU
+TPU
+NPU
+DPU
+ISP
+
+
+What are the abstractions used over all this processors ?
+Can we use C/C++ language to programme on top of a GPU or TPU or NPU ?
+

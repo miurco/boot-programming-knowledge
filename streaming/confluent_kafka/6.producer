@@ -1,0 +1,14 @@
+
+KafkaProducer
+
+ProducerRecord, the java class that wraps Kafka Event
+
+others:
+  connection pools
+  network buffering
+  ....
+
+
+It is the producer that makes the decision about which partition to send each message to 
+
+"partitions lives into the producers"

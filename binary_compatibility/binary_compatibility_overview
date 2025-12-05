@@ -1,0 +1,62 @@
+WHAT IS ?
+
+    Source compatibility
+    ======================
+    Two libraries are source compatible if switching one for another does not incur any compiler errors
+    or unintended behavioral changes.
+    If we can upgrade version 1.0.0 of a dependency to v1.1.0 and recompile our code without any compilation errors - is source compatible with 1.0.0
+
+
+    Binary compatibility
+    =====================
+    Two library versions are Binary Compatible with ech other if the compiled bytecode of these vesrions can be interchanged
+    without causing Linkage Errors
+
+
+    Backward compatible
+    ======================
+    v2.0 can be used in an environment where v1.0 was expected
+    So scala 3 ecosystem(new libraries) ??? not backword compatible with scala 2.13 ecosystem(the tones of libraries)
+
+
+    Forward compatible
+    ======================
+    v1.0 can be used in an environment where v2.0 was expected
+
+
+
+Some abstractions and similarities
+
+
+First View
+
+      Moving/evolving elements: 
+            For example a core library part of Scala ecosystem is an evolving element
+            CPU could be someting that can evolve, by extending its ISA, or anything that makes it more powerful
+            A combination between CPU and Operating System = X86 and Linux, ARM and OSX
+
+      An executable:
+            Something that has been built using evolving elements and being able to be executed
+
+
+      Will the executable be able to execute with the new versions of evolving elements ?
+              
+
+Second View
+
+      Surrounding Environment:
+            JVM + any good frameworks
+            OS + CPU
+            JVM + Scala ecosystem
+            Execution Environment(Compiler, Interpreter)
+            Libraries + Execution Environment
+            Net + Framework ...
+
+
+
+      Executable:
+           Has been built with help of the surrounding environment
+
+        Will the executable be able to execute correctly in a new surrounding ?
+
+

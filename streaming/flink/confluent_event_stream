@@ -1,0 +1,28 @@
+Event Stream
+Event Source
+Event Processor
+Event Sink
+
+
+Event Sources produce events to Event Stream
+
+Event Processor and Event Sinks consumes them
+
+
+Event Stream
+-------------
+
+
+In Appache Kafka, Event Streams are called topics
+
+
+Streaming technologies support Kafka-based Event Streams as a core abstraction. For example
+
+|> The Kafka Streams DSL API provides abstractions for Event Streams, notably the KStream interface for unbounded data streams and KTable interface
+   for changelog data on keyed records(e.g KTable of product updates keyed on product ID)
+
+
+
+
+
+

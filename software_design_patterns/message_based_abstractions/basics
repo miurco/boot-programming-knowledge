@@ -1,0 +1,85 @@
+
+Event Sourcing System
+----------------------
+
+Why use message based abtstraction in ES  ?
+
+
+				1) Scalability
+						By modeling events as messages, systems can distribute processing across services or nodes
+
+				2) Auditability and Replayability
+					  The sequence of messages (events) provides a complete and auditable history of changes
+
+				3) Loose Coupling
+					  Components that reacts to events do not need to know about the internals of the event producer
+
+				4) Resilience
+					  Message-based abstractions enable retry mechanisms and eventual consistency
+
+
+Example workflow in ES
+
+	1. Command Execution
+	2. Event emission - command is processed, resulting in an event(e.g OrderPlaced) which is stored in the event store
+	3. Event publication - The event is treated as a message and published to a message bus for further processing
+	4. Event handling - Downstream components react to the message to update read models, trigger workflows, or send notification
+
+
+
+Event Sourcing Storage Type
+------------------------------
+A variety of storage options
+
+1) Relational database, 
+		Events table with fields like
+		EventId, AggregateId, EventType, Payload, TimeStamp
+
+		Disadvantages
+		a) May not scale well for high-throuput systems
+
+
+2) NoSql
+		Document Store: MongoDb, Couchbase
+		Key-Value Store: DynamoDb, Redis
+		Wide-Colum Store: Hbase, Casandra
+
+		Advantages
+		a) Scale horizontally for high-volume event streams
+		b) Flexible schema for evolving event types 
+		Disadvantages
+		a) Less strict transactional guarantees
+
+3) Event Stores (Purpose-Built)
+		Specialized storage systems designed explicitly for Event Sourcing
+
+		EventStoreDb: Designed for Event Sourcing with features like event streams, projections, and idempotent writes
+		Axon Server: Built for CQRS and Event Sourcing architectures
+
+		Advantages
+		a) Optimized for append-only and read intensive workloads
+		b) Built-in features for event versioning, querying, replaying
+		Disadvantages
+		a) Fewer options and less community support compared to general-purpose databases
+
+4) Log-Based Systems
+
+		Store events as immutable log of records
+
+		Appache Kafka: A distributed log-based system that acts as both a message broker and event store
+		Amazon Kinesis: For event streaming and storage
+
+		Advantages
+		a) Higly scalable and efficient for large-scale event streaming
+		b) Native support for replaying events and partitioning
+		Disadvantages
+		a) Often require integration with external storage for long-term persistence
+
+5) File-Based Storage
+		Events are serialized and written to files or object storage system
+
+		Flat files on disk
+		Cloud storage like Amazon S3, Google Cloud Storage
+
+In summary, Event Sourcing in inherently messag-based becuase it's architecture uses events as the central abstraction for
+communication, state management, and decoupling

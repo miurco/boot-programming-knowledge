@@ -1,0 +1,12 @@
+Brokers
+=======
+
+computer, instance, or container running the Kafka process
+
+manage partitions
+
+handle write and read requests
+
+manage replication of partitions
+
+

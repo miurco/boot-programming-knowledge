@@ -1,0 +1,100 @@
+
+Compatibility can be defined between two parts
+
+1) Writer
+2) Reader
+
+What is the compatibility of Reader and Writer ?
+
+Backward compatibility
+		Newer code can read data that was written by older code
+
+Forward compatibility
+		Older code can read data that was written by newer code	
+		
+Examples
+
++---------------------------------------------------------------------------+
+| Remove old field2 in B component.                                         |
+|                                                                           |
+| In backward compatibility you can safely remove fields in component B.    |
+|                                                                           |
+|                                     +++                                   |
+|+------------------+       +--------------------+                          |
+||                  |       |                    |                          |
+||  field1: data1   |       |    field1: data1   |                          |
+||  field2: data2   |       |                    |                          |
+||  field3: data3   |       |    field3: data3   |                          |
+||  field4: data4   |       |    field4: data4   |                          |
+||                  |       |                    |                          |
+||   A Component    |       |  B Component       |                          |
+|+------------------+       +--------------------+                          |
+|                                                                           |
++---------------------------------------------------------------------------+
+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+|                                                                                                                                     |
+| Add new field in component B                                                                                                        |
+|                                                                                                                                     |
+| In backward compatibility you can add safely add new field if it has a default value in case the field is not provided by the Writer|
+|                                                                                                                                     |
+|                                     +++                                                                                             |
+|+------------------+       +--------------------+                                                                                    |
+||                  |       |                    |                                                                                    |
+||  field1: data1   |       |    field1: data1   |                                                                                    |
+||  field2: data2   |       |                    |                                                                                    |
+||  field3: data3   |       |    field3: data3   |                                                                                    |
+||  field4: data4   |       |    field4: data4   |                                                                                    |
+||                  |       |                    |                                                                                    |
+||   A Component    |       |  B Component       |                                                                                    |
+|+------------------+       +--------------------+                                                                                    |
+|                                                                                                                                     |
++-------------------------------------------------------------------------------------------------------------------------------------+
+
+
+
++------------------------------------------------------------------------------------------------+
+|                                                                                                |
+|   Remove old field3 in A component.                                                            |
+|                                                                                                |
+|   In forward compatibility you can safely remove old fields which are having default values.   |
+|                                                                                                |
+|         +++                                                                                    |
+|  +-----------------+        +------------------+                                               |
+|  |                 |        |                  |                                               |
+|  |  field1: data1  |        |  field1: data1   |                                               |
+|  |  field2: data2  |        |  field2: data2   |                                               |
+|  |                 |        |  field3: data3   |                                               |
+|  |  field4: data4  |        |  field4: data4   |                                               |
+|  |                 |        |                  |                                               |
+|  |   A Component   |        |   B Component    |                                               |
+|  |                 |        |                  |                                               |
+|  +-----------------+        +------------------+                                               |
+|                                                                                                |
++------------------------------------------------------------------------------------------------+
+
+
+
++----------------------------------------------------------------------------------------------------+
+| Add new fields in component A.                                                                     |
+|                                                                                                    |
+| In forward compatibility you can safely add new fields either with defaults or non default values. |
+|                                                                                                    |
+|       +++                                                                                          |
+|+-----------------+        +------------------+                                                     |
+||                 |        |                  |                                                     |
+||  field1: data1  |        |  field1: data1   |                                                     |
+||  field2: data2  |        |  field2: data2   |                                                     |
+||  field3: data3  |        |  field3: data3   |                                                     |
+||  field4: data4  |        |  field4: data4   |                                                     |
+||  field5: data5  |        |                  |                                                     |
+||   A Component   |        |   B Component    |                                                     |
+||                 |        |                  |                                                     |
+|+-----------------+        +------------------+                                                     |
++----------------------------------------------------------------------------------------------------+
+
+
+
+

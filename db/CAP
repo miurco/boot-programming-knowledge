@@ -1,0 +1,43 @@
+
+Examples:
+
+CP database: A CP database delivers consistency and partition tolerance at the expense of availability. When a partition occurs between any two nodes, the system has to shut down the non-consistent node (i.e., make it unavailable) until the partition is resolved.
+
+AP database(social media platform): An AP database delivers availability and partition tolerance at the expense of consistency. When a partition occurs, all nodes remain available but those at the wrong end of a partition might return an older version of data than others. (When the partition is resolved, the AP databases typically resync the nodes to repair all inconsistencies in the system.)
+
+CA database(banking systems): A CA database delivers consistency and availability across all nodes. It can’t do this if there is a partition between any two nodes in the system, however, and therefore can’t deliver fault tolerance.
+
+
+Decision Framework
+----------
+
+1. What are system priorities
+	Is it crucial to have the most recent data at all times, or can your system tolerate some level of incosistency ?
+	Is it important to keep the system available, or can it withstand ocassional downtime ?
+
+2. Chose the right data store
+	If prioritize consistency and partition tolerance, you might opt for a distributed database like Appache Cassandra.
+	If availability and partition tolerance are more important then Amazon DynamoDb might be better.
+
+3. Optimize Trade-Offs
+	Understand the trade offs you are making and work to optimize them. For example, if your system prioritize availability and partion tolerance,
+	you can still work to minimize inconsistencies by implementing techniques such as read-repair, hinted handoffs, and eventual consistency.
+
+4. Monitor and Adapt
+	Regularly monitor your distributed system's performance to ensure it meets your expectations.
+
+
+Youtube case study
+
+Availability and partion tolerance are priorities of the system.
+
+It's more important to ensure users can access videos and interact with the platform, even if they occasionally experience slight inconsistencies in data.
+
+A distributed store like Amazon DynamoDB or Appache Casandra would be suitable for this purpose, as they are designed to hadle high levels of read and write traffic while
+maintaining availability and partition tolerance.
+
+Design for Scalability and Redundancy: Implementing a distributed storage system ensures that the platform can scale horizontally by adding more nodes to the cluster as needed. Additionally, replicating data across multiple nodes in different geographical regions can help increase durability and minimize the risk of data loss.
+
+Optimize for Data Incosistencies: Techniques such as eventual consistency, read-repair, and hinted handoffs can help in reducing incosistencies across distributed nodes. For example, when the user adds a new comment, the system might propagate these changes asynchronously across nodes, ensuring that eventually, all nodes have the most up-to-date information.
+
+Using Caching and Content Delivery Networks: To further enhance performance and availability, a system like youtube can leverage caching and CDN. CDNs can reduce latency and improve user experience.

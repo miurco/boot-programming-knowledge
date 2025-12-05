@@ -1,0 +1,44 @@
+
+What is sharding ?
+What is replication ?
+Sharding vs Partition
+
+Does kafka support sharding ?
+
+
+
+
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Aspect            | Sharding                                        | Partition                                      |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Data Distribution | Across multiple datbase instances(shards)       | Within a single database instance(partitions)  |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Scalability       | Excelent horizontal scalability                 | Limited by the capacity of a single instance   |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Query Performance | High performance due to parallel processing     | Improved performance for focused queries       |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Maintenance       | Complex management of distributed systems       | Efficient data management within a single db   |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Join Operations   | Can be complex and slow across different shards | Generally simpler for joins within a partition |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Data Consistency  | Challenges in maintaining consistency           | Consistency management is more strightforward  |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+| Use case          | High traffic, massive datasets                  | Performance optimization within a single db    |
+|-------------------+-------------------------------------------------+------------------------------------------------|
+
+
+
+Data Distribution Example: In a diverse­ e-commerce platform, the­ distribution of user data aligns along geographic regions. Each shard stores users from specific areas, such as North America in one shard and European users in another.
+
+
+Scalability Example: A social media platform that is experiencing fast growth in users may employ a technique called sharding. This involves distributing the data of new sign-up users across multiple shards, preventing any individual shard from becoming ove­rloaded with data.
+
+Query Performance: Sharding's parallel processing capabilities greatly enhance query performance, particularly for
+workloads that prioritize reading. By executing queries simultaneously on individual shards, the system
+significantly improves response time.
+
+
+
+
+
+

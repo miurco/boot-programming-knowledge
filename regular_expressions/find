@@ -1,0 +1,6 @@
+find coffe_shop -name '*.java' -exec grep import {} \;
+find [WHERE] [OPTION]
+
+
+move "file2.c" to "level2" directory that is within "find_dir" directory
+find find_dir -type d -name level2 -exec mv file2.c {} \;

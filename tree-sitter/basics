@@ -1,0 +1,26 @@
+what is it ?
+
+How can you look at it
+----------------------
+	a) parser generator tool
+	b) incremental parsing library
+
+parsing what ? a specific format like xml,json,yml,toml or any other formats
+the "subject" is a given programming language source code that needs to be parsed
+
+
+it can build a concrete syntax tree for source file and efficiently update the syntax tree as the source file is changed
+
+
+tree-sitter aims to be
+
+General enough to parse any programming languages
+Fast enough to parse on every keystroke in a text editor
+Robust enough to provide useful results even in the presence of syntax errors
+Dependency-free so that the runtime library(which is written in purre C11)
+
+
+so, I should use it first from cli, isn't it ?
+
+
+Language bindings

@@ -1,0 +1,54 @@
+Kafka is a distributed system.
+
+
+If a topic were constrained to live on one machine in a cluster it would place a prety radical limit on ability of kafka to scale.
+A topic never get bigger than the biggest node you can deploy.
+
+
+
+
+
+Partitioning single topic log and breaks it into multiple logs each of which can leave off on separate node on Kafka cluster
+
+
+ partition   0
+ 
+ partition   1
+
+ partition   2
+
+
+
+
+How kafka achieve deliver-once semantics
+------------------
+
+ensures that each message sent to a kafka topic is delivered to the consumer exactly once.This is crucial
+in distributed system where data consistency and integrity are vital.
+
+
+1. Idempotent Producer
+  Producer are configured to be idempotent, meaning they can send message multiple times but it will be commited only once.
+2. Transactional Messaging
+	Kafka supports transactions, allowing producers to send a batch of messages to multiple partitions atomically.
+	This ensures that either all messages are commited successfully, or none are.
+
+  props.put("transactional.id", "unique-transactional-id"); //Required for transactional messaging
+	props.put("enable.idempotence", "true");
+	props.put("acks", "all");
+
+How to ensure order of messaging in kafka
+----------------------
+
+Kafka guaranties that the order of messages is preserved within a single partition. However, kafka does not
+provide ordering guarantees across different partitions of the same topic.
+
+
+Partitioning Strategy:
+	- To maintain order for a specific subset of messages, use key-based partitioning strategy. Messages with the same key will go to 
+	  the same partition, preserving their order.
+
+Single Partition, this limits scalability
+
+Ensure each partition is consumed by only one consumer thread within the group
+

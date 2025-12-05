@@ -1,0 +1,15 @@
+Transactions goes through three general processes
+
+								1.Authorization
+								2.Clearing
+								3.Settlement
+
+
+
+The result of Authorization is funds blocking on customer's card for up to 7 days for debit cards and 28 days for credit cards
+This gives time to make sure that the customer's card is valid and that the customer is not a fraud. This operation is free of charge and can be canceled at any time for free. It's impossible to create a chargeback for this operation, since there was neither the 
+   - Clearing fact
+			- nor the Settlement fact
+
+
+	After Clearing, all transactions have already been successfully registered for all participants in the process, but no funds transfer flow has been made yet. This usually happens in 1-2 banking days. Once the Clearing is done, a dispute flow can be initiated.

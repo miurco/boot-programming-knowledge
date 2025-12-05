@@ -1,0 +1,4 @@
+
+VOLATILE ensure visibility across threads ! It resemble the READ COMMITED isolation level of a database
+
+

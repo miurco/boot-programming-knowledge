@@ -1,0 +1,35 @@
+
+[] Clarifying system requirements and optmizing possible tradeoffs
+[] Drafting your system's API specification 
+[] Designing the data models on your system
+[] Discussing concerns like logging, monitoring, and alerting or search 
+[] Reflecting on your interview experience and evaluating the company
+
+
+
+Principle must to follow during 1 hours system design interview.
+----------------------------------------------------------------
+
+
+1. Clarifying functional and non-functional requirements(chapter 3) such as QPS and P99 latency.
+Ask if the interviewer wants to start the discussion from a simple system and then scale up design
+more features or start with immediately desining a scalable system.
+
+2. Everything is a tradeoff.
+Any new addition to the system to improve scalability, consistency,
+or latency also increases complexity and cost and requires security, logging, monitoring, and alerting.
+
+3. Drive the interview. Keep interview's interest strong. Discuss what they want. Keep suggesting topic of discussions to them.
+
+4. Be mindful of time. There is too much to discuss in 1 hour
+
+5. Discuss logging, monitoring, alerting, and auditing
+
+6. Discusss testing and maintainability including debuggability, complexity, security, and privacy.
+
+7. Consider and discuss graceful degradation of failure in the overall system and every component, including silent and disguised failures.
+Errors can be silent. Never trust anything. Don't trust external or internal systems. Don't trust your own system.
+
+8. Draw system diagrams, flowcharts, and sequence diagrams. Use them as visual aids for your discussions.
+
+9. The system can always be improved. There is always more to discuss.

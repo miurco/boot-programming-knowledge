@@ -1,0 +1,40 @@
+Programming Model
+
+A programming model reffers to the style of programming where execution is invoked by making what appears to be a library call
+Examples includes POSIX Threads, and Hadoop's MapReduce
+
+
+In both cases the execution model is different from that of the base language in which the code is written
+
+
+From stack exchange - programming paradigm vs programming model
+
+
+Programming models bridge the gap between the underlying hardware architecture and the supporting layers of software available to applications.
+
+Programming models are different from both programming languages and application programming interfaces (APIs). Specifically, a programming model is an abstraction of the underlying computer system that allows for the expression of both algorithms and data structures.
+
+In comparison, languages and APIs provide implementations of these abstractions and allow the algorithms and data structures to be put into practice – a programming model exists independently of the choice of both the programming language and the supporting APIs.
+
+Programming models are typically focused on achieving increased developer productivity, performance, and portability to other system designs. The rapidly changing nature of processor architectures and the complexity of designing an exascale platform provide significant challenges for these goals. Several other factors are likely to impact the design of future programming models.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

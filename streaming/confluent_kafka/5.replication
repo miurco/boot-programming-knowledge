@@ -1,0 +1,8 @@
+
+leader replica(main partition)
+
+follower replicas
+
+in general, writes and reads happen to the leader
+
+leader and follower works together to make those new writes move to the followers

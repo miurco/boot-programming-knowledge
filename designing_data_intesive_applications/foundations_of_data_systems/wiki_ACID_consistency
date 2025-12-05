@@ -1,0 +1,152 @@
+
+Transaction processing is designed to maintain a system's integrity, consistent state by ensuring that interdependent operations on the system are either
+all completed successfully or all canceled successfully.
+
+
+CAP
+ACID
+
+Atomicity
+---------
+
+
+Consistency
+--------
+
+Consistency: A transaction is a correct transformation of the state. The action taken as a group do not violate any of the integrity constraints
+             associated with the state.
+
+
+    Data Integrity
+    --------------
+
+        Physical Integrity
+        Logical Integrity
+            This type of integrity is concerned with correctness or rationality of a piece of data, given a particular context
+
+        Type of Integrity Constraints
+        -------------
+
+              - Entity Integrity Constraints
+              - Referencial Integrity Constraints,
+              - Domain Constraints, value associated with an attribute is justifying its domain
+                      not null constraints
+                      default constraints
+                      check clause constraint
+              - User-defined integrity
+
+              If the database supports these features, it is the responsability of the database to ensure 
+                - data integrity
+                - consistency model for the data storage and retrieval
+              
+              If the database doesn't supports these features, it is the application's responsability to ensure data integrity while 
+              the database supports the consistency model for data storage and retrieval
+
+
+                              <<Application>>                                       <<Data Base>
+                      +-------------------------------------+            +-------------------------------------------------+
+                      |                                     |            |  +------------------+   +---------------------+ |
+                      |                                     |            |  |                  |   |                     | |
+                      |                                     |            |  |  Data integrity  |   | Consistency model   | |
+                      |                                     |            |  |                  |   |for storage and read | |
+                      |                                     |            |  +------------------+   +---------------------+ |
+                      +-------------------------------------+            +-------------------------------------------------+
+
+
+                              <<Application>>                                          <<Data Base>>
+                      +-------------------------------------+             +-------------------------------------------------+
+                      |                +------------------+ |             |   +------------------------+                    |
+                      |                |                  | |             |   |                        |                    |
+                      |                | Data Integrity   | |             |   | Consistency model      |                    |
+                      |                |                  | |             |   |for data storage and    |                    |
+                      |                |                  | |             |   |retrieval               |                    |
+                      |                +------------------+ |             |   +------------------------+                    |
+                      +-------------------------------------+             +-------------------------------------------------+
+
+
+                     Application: Distributed
+                     Storage: simple files
+
+                 Scenario:
+                        Transfer money from one account to another account within the same bank system
+
+
+                        A1: 500£
+                        A2: 300£
+                        A1 ---> 200£ ----> A2
+                        -------------------
+                        A1: 300£
+                        A2: 500£
+
+                        Operations:
+                            1. Retrieve A1 account's details
+                            2. Business Logic: check the A1 has enough funds
+                            3. If it has: this two operations must be atomically
+                              3.1 Extract 200£ from A1: Storage operation
+                              3.2 Add 200£ to A2: Storage operation
+                  
+
+
+
+                  Conistency model
+                  ----------------
+                  Are used in distributed systems like distributed shared memory systems or distributed data stores(filesystems, database, optimistic replication systems or web caching)
+
+                  The systems is said to support a given model if operations on memory follow specific rules
+
+
+                                  As an interface                    where the system guarantees that if the P follows the rules, memory will be consistent
+                             +---------------------+               +---------------------+   
+                             |                     |               |                     |   
+                             | Data consistency    |               |   System            |   
+       Programmer  --------- |     model           |  ----------   |                     |   
+                             |                     |               |                     |   
+                             +---------------------+               +---------------------+   
+
+
+
+
+
+
+
+Consistency in database systems refers to the requirement that any given database transaction must change affected data only in allowed ways 
+    - change
+    - allowed ways (by well known rules)
+        - constraints(data integrity)
+        - cascades, rollbacks
+        - triggers, mostly used for maintaining the integrity
+
+
+
+
+
+
+
+                              DataSource                 TransactionManager
+
+
+
+
+                                        EntityManager
+                                       (EntityManagerFactory)
+                                       (PersistenceContext)
+
+
+
+
+
+Vocabulary
+=============
+persistence unit
+
+
+
+
+
+
+
+
+
+
+
+

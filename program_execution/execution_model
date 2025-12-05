@@ -1,0 +1,93 @@
+EXECUTION MODEL
+================
+
+
+                                 +---------------------+                                    +-------------------+
+                                 |                     |                                    |                   |
+                                 |Programing Language  |------------------------------------|Programmer         |
+                                 +---------------------+                                    +------------+------+
+                                         |                                                               |
+                                         |                                                               |
+                                         |                          Applying it on source code           |
+                                   specification                    we cand derive the behavior      Source code
+              +----------------+         |               +------------------+                           ^   
+              |                |         +----------|>   |                  |                           |
+              |Grammar/syntax  |                         |Execution model   | --------------------------+
+              +----------------+                         +--+-------+----+--+
+                                                            |       |    |
+                                                      +-----+       |    +-------+
+                                                      |             |            |
+                                                   compiler    interepreter   runtime
+
+
+
+Operational Semantics is one method of specifying a language's execution model
+Not Accurate:: In case of NET it might be the CLI which is an open standard that describes executable code and rutime systems
+ 
+
+
+EXECUTION MODEL - is something we can use to derive what would be the behavior of the programm when it will be executed
+
+Each and every programming languge has an execution model which determines the manner in wich the units of work are scheduled for execution
+
+                            +------------------------------+
+                            |                              |
+                            |  Programming language        |
+                            |                              |
+                            | +--------------------------+ |
+                            | |    Execution Model       | |                      Programming Model:  MapReduce 
+                            | +--------------------------+ |
+                            |                              |
+                            +------------------------------+ 
+
+
+
+Execution models can also exist independently from programming languages, examples of which would be POSIX Threads library, and Hadoop's Map Reduce programming model.
+                                                                     +---- API C
+                               +-----------------------------+       |
+                               |    Execution Model          | ------+---- API C++                   
+                               +-----------------------------+       |
+                                                                     +---- API Java
+
+
+IMPLEMENTATION OF AN EXECUTION MODEL
+            Can be via a compiler, or interpreter, and often includes a runtime system
+            An implementation of an execution model controls the order in wich work take place during execution.
+
+            This order may be chosen ahead of time(AOT compiling in .Net 5 platform) in some situations, 
+            or it can dynamically be determined as the execution proceeds
+
+            The static part of order execution determination is implemented inside the compiler
+            The dynamic part of order execution determination is implemented inside the language's runtime system.
+            The runtime system might be a library which is called by instructions inserted by the compiler, or the runtime system 
+            is embedded into executable directly
+
+            However, an interpreter may also be constructed for any language, in which case all decisions on order of execution are dynamic.
+
+
+Assembly languages also have execution models, the same as any other language. Such an execution model is implemented by a CPU micro-architecture
+
+
+PARALLEL EXECUTION MODEL  - that is not yet parallel computing
+========================
+Parallel execution models tends to be complex because they involve multiple timelines
+Parallel execution model includes behaviour of synchronous constructs
+A common syncronization construct is the lock. In posix threads this would be pthread_mutex_lock(&myMutex), in Java it would be lock.lock()
+In both cases the timeline is called a thread
+
+
+
+
+                                   Programming languages uses the execution models
+
+                                          |          |               |
+                                          |          |               |
+                                          |          |               |
+                                          |          |               |
+                                       +--------------------------------+
+                                       |   Parallel execution models    |
+                                       +--------------------------------+
+
+
+
+Modern parallel programming languages have much easier to use execution models. The thread model was one of the original parallel execution model

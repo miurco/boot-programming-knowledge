@@ -1,0 +1,45 @@
+
+
+                                                     CONCURRENT COMPUTING
+                                                     =====================
+                                      IS A FORM OF COMPUTING IN WHICH SEVERAL COMPUTATIONS ARE EXECUTED
+                      CONCURRENTLY - DURING OVERLAPPING TIME - INSTEAD OF SEQUENTIALLY, WITH ONE COMPLETING BEFORE THE NEXT STARTS.
+
+
+
+                                      THIS IS A PROPERTY OF THE SYSTEM - WHETHER A PROGRAM, COMPUTER, 
+                      OR A NETWORK - WHERE THERE IS A SEPARATE EXECUTION POINT OR THREAD OF CONTROL FOR EACH PROCESS 
+
+
+
+
+Models for understanding and analyzing concurrent computing systems include
+========
+
+      - Actor Model
+      - Petri Nets
+      - Process calculi
+            - Comunicating sequential processes(CSP)
+
+
+Interaction and communication
+========
+
+        In some concurrent computing systems, communication between the concurrent components is hidden from the progrmmer(by using features) while
+        in others it must be hadled explicitly. Explicit communication can be devided into two classes
+
+
+        Shared memory communication
+        Message passing communication
+
+
+
+
+
+
+
+
+
+
+
+

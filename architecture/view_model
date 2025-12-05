@@ -1,0 +1,47 @@
+ View Model
+ ===========
+ A view is a representation of a whole system from the perspective of a related set of concerns
+
+
+ View
+ =========
+ A view of a system is a representation of the system from the perspective of a Viewpoint
+
+
+ Viewpoints
+ ==========
+ In system engineering, a viewpoint is a partitioning or restriction of concerns in a system. Adoption of a Viewpoint is usable so that issues in those aspects can be addressed separately.
+ A good selection of viewpoints also partitions the design of the system into specific areas of expertise
+
+ Viewpoints provide the conventions, rules, and language for constructing, presenting and analysing the views.
+ 
+
+ A view is a representation of a whole system from the perspective of a viewpoint.
+ A VIEW may consists of one or more ARCHITECTURAL MODELS
+
+
+
+
+                                                +---- viewpoint 1 -+
+                                                |                  |
+                                        View ---+---- viewpoint 2 -+- ---------------   System
+                                                |                  |
+                                                +---- viewpoint 3 -+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

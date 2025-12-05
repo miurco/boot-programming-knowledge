@@ -1,0 +1,47 @@
+
+
+1) Set the scope
+2) Design the system at a high level. in Here keep in mind the constraints you have set in step one
+    - Design your api, soap, rest, graphql, grpc
+3) Deep dive into the design. 
+   Talk on how nonfunctional requirements impact your design choices
+     - if online service require fast data, think about how to speed up data ingestion and queries
+     - if amount of data you need to store is large, u might want to partition your database to balance store and query traffic
+
+      You might consider some load balancer layer to distribute read/write traffic
+4) Identify bottlenecks and scaling oportunities
+   - is there a single point of failure ? what can we do to improve the robustnes and enhance system availability
+   - is the data valuable enough to require replication,
+   - if we replicate our data how import is to keep all the versions consistent
+   - do we support a global service if so do we need to deploy multi-geo data centers to improve data locality
+   - are there any edge cases such as peak time usage or hot users that creates a particular usage pattern that could deteriorate your performance
+   - how do we scale the system to support 10x more users, as we scale the system we might want to gradually upgrade
+   each component or migrate to another architecture.
+
+5) Review and wrap up. Trade offs. Check your design satisfies your requirements(periodically through all steps)
+
+   this is where knowledge like horizontal sharding, CDN, caching, rate limiting,
+
+
+
+
+1. Clarify the requirements. Discuss tradeoffs
+
+2. Draft the API specification
+    2.1 Define API endpoints
+    2.2 Specify Request and Response formats 
+    2.3 Define HTTP methods and status codes
+    2.4 Handl authentication and authorization(API keys, JWT)
+    2.5 Document API parameters and headers. Any required or optional parameters for each API endpoint
+    2.6 Address Error Handling and Validation, Define how errors and validation failures will be communicated to the clients, including error codes, mess..
+    2.7 Consider API versioning.Decide on an approach for versioning your APIs, ensuring backward compatibility and allowing for future changes &.
+    2.8 Discuss Rate Limiting and Throtlling.
+    2.9 Explore API documentation and Testing tools.
+
+3. Design the data model. Discuss possible analytics
+    3.1 Identify the Entities and Relationships
+    3.2 Define the Data Structure and Schema. Decide on the data storage solution(NoSQL, relational database)
+    3.3 Discuss Data Partitioning and Sharding. Discuss partitioning key selection strategies, and chalanges(like hot partition, data skew).   
+    3.4 Address Data Consistency and Integrity. Describe mechanisms to ensure data consistency, such as transactions, compensating actions, or eventual consistent model. Discuss strategies for handling concurrent updates and conflicts(e.g optimistic or pessimistic locking)
+
+4. Discuss failure design, graceful degradation, monitoring, and alerting. Other topics include bottlenecks, load balancing, removing single point of failures, high availability, disaster recovery and caching

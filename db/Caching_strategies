@@ -1,0 +1,58 @@
+Database caching strategies
+===========================
+
+Cache-aside
+---------------------
+a.k.a Lazy loading. The database cache sits next to database.
+
+This strategy is useful for scenarios where the cache contains frequently accessed data, improving:
+	a) response times 
+	b) and reducing load on the primary data source.
+
+Two additional benefits stem from the cache being separated from the database:
+		1. In the instance of cache failure, the system goes directly to the datbase - RESILIENCY.
+		2. With the cache being separate, it can employ a different data model than that of the database.
+
+
+Read-through and Read-ahead caching
+---------------------
+
+For reads the application will always talk to the cache. Cache will bring data from database if it is missing.
+
+Suitable for read-heavy workloads
+
+Read-ahead caching anticipates future data access patterns and preloads data into the cache before it's requested. 
+
+
+
+Write-through and Write-behind caching
+---------------------
+
+Writing data to both the cache and the primary data source simultaneously:
+
+	a) Introduce latency due to dual write
+	b) Consistency is ensured
+
+Write-behind writes data first to cache and then asynchronously updates the primary source: 
+	a) Reduce latency
+	b) Increase risk of data incosistency
+
+
+
+
+Strategies for cache invalidation
+===========================
+
+Time based invalidation
+
+Event based invalidation
+
+Cache Eviction Policy
+===========================
+LRU - least recently used
+FIFO -
+LFU - least frequently used
+Random eviction
+
+
+

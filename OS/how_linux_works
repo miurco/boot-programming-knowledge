@@ -1,0 +1,61 @@
+
+
+Kernel is in charge of managing tasks in four general system areas:
+Processes
+  the kernel is responsible for determining which processes are followed to use cpu
+Memory
+  the kernel needs to keep track of all memory - what is currently allocated to a particular process, what might be shared between processes.
+Device drivers
+  the kernel acts as an interface between hardware and processes.
+System calls and support
+  processes normally use system calls to communicate with the kernel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

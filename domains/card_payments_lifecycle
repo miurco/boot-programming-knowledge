@@ -1,0 +1,46 @@
+Card allow businesses to sell to strangers, safe in the knowledge that they'll be paid, provided they've done things right.
+
+
+Main parties involved in a card payment
+
+												The Merchant: Who accepts cards to make sales
+												The Acquirer: Who enables merchants to accept payment for goods and services
+												The Cardholder: Who uses the card to make purchases
+												The Issuer: Who provides customers with cards
+
+												Known as 'four-party' or 'four-corner' model 
+
+Visa and Mastercard operate a four-party model. As card schemes or networks, they sit at the center, connecting participating issuers and acquirers
+They don't issue cards to cardholders or place terminal with merchants to acquire transactions. Their participating banks and financial institutions do this.
+
+Card schemes set the rules, manage the payment network and promote their brands.
+
+Other parties may be involved in a card payment, usually by supplying services to one of the four main parties. For examole, a merchant may use a payment gateway to collect customer card details from their website and pass them to an acquirer.
+
+
+How do online payments via card work ?
+
+
+						Is the Cardholder who they say they are ?
+						Are they good for the money ?
+									authentication and authorization
+
+						1. The Cardholder enters their Card details into the online checkout page and clicks 'pay'
+						2. This information is transferred to the Merchant's Acquirer via a Payment Gateway
+						3. The Acquirer sends the message to the relevant card scheme(VISA)
+						4. The Card Scheme passes this on to the Cardholder's Issuer
+						5. The Issuer confirms to the card scheme that the Cardholder is legitimate(authentication) and funds are available(authorization) 
+						6. The Card Scheme passes this response to the Acquirer
+						7. The Acquirer sends the message on to the merchant, either directly or via a Payment Gateway
+						8. The Merchant confirms a successful payment to the cardholder.
+
+How does money move and end up in the right place ?
+
+		Essentially, the Card Schemes operate a giant digital Ledger to ensure funds end up in the right place.
+
+		At the end of the business day, Merchants send all their Card Transactions to their Acquirer, either directly or via a Payment Gateway.
+		The Acquirer sends these on to the relevant card scheme. Behind the scenes, the Card Scheme credits the Acquirer and debit Issuer, the bank and financial institutions that have issued cards to merchants' customers.
+
+
+
+

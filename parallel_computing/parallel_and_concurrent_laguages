@@ -1,0 +1,14 @@
+
+Parallel Programming Languages
+==============================
+
+These can generally be divided into classes based on the assumptions they make about the underlying memory 
+     - architecture—shared memory, 
+     - distributed memory, 
+     - or shared distributed memory
+
+Concurrent programming languages, libraries, APIs, and parallel programming models (such as algorithmic skeletons) have been created for programming parallel computers
+
+
+
+

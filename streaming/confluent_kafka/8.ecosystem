@@ -1,0 +1,44 @@
+Kafka Connect
+-------------
+
+Data integration system and ecosystem
+
+Because some other system are not Kafka
+
+External client process; does not run on Brokers
+
+Horizontally scalable
+
+Fault tolerant
+
+Declarative
+
+
+Connector
+---------
+Pluggable software component
+
+Interfaces to external system and to Kafka
+
+Also exist as runtime entities
+
+Source connectors act as Producers
+
+Sink connectors ac as Consumer
+
+
+Schema Registry
+---------------
+
+Server process external to Kafka brokers
+
+Maintains a database of schemas
+
+Consumer/Producer API component
+
+
+Supported Serialization Formats: JSON Schema, Avro, Protocol Buffers
+
+
+Kafka Streams
+--------------

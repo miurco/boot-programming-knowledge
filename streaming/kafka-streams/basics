@@ -1,0 +1,59 @@
+# Difference between KStream and KafkaStreams
+
+KStream:
+- An abstraction representing a continuous flow of key-value records
+- Part of the Kafka Streams DSL (Domain-Specific Language)
+- Used to define stream processing operations like map, filter, join, aggregate
+- Represents the logical part of stream processing
+- You build transformations on KStream objects to define your business logic
+There is a lower level API to define kafka streams - Processor API
+
+KafkaStreams:
+- A CLIENT class that REPRESENTS the ACTUAL RUNTIME of a Kafka Streams application
+- Manages the lifecycle and execution of your stream processing application
+- Takes a Topology object (which contains KStream operations) and configuration properties
+- Provides methods to start/stop/close the streaming application
+- Handles threading, state management, and fault tolerance
+
+**Conclusion**: Kstream define the processing logic and KafkaStreams is the runtime of the application.
+
+
+
+Questions ?
+
+What is a Node in a Kafka Streams Topology?
+Are Nodes distributed across multiple instances of the application, for example a PROCESSOR NODE like MAP,FILTER or JOIN?
+
+
+NODE - a component in processing graph that represents either
+		a) SOURCE
+		b) PROCESSOR
+		c) SINK
+Nodes are connected together to form DAG that defines how data flows through the app.
+
+
+TASK = [Input Topic Partition] + [Processor Topology]
+
+1. **Definition**: A TASK is an internal runtime entity that contains a subset of the processor topology that processes data from specific topic partitions.
+2. **Creation**: Kafka Streams creates exactly ONE TASK PER INPUT TOPIC PARTITION. So if your input topic has 8 partitions, there will be 8 tasks created.
+3. **Content**: Each task contains:
+   - Processor instances for the topology subset
+   - Associated state stores (RocksDB) if needed
+   - Consumer threads for reading from assigned partitions
+   - Producer instances for writing to output topics
+
+4. **Types**:
+   - **Active tasks**: Process records and maintain state
+   - **Standby tasks**: Replicate state from active tasks but don't process records (used for fault tolerance)
+
+## Is it reflected in the code?
+
+Tasks are not directly visible or manipulated in application code. They are:
+- Created and managed automatically by the Kafka Streams runtime
+- Not part of the API developers interact with
+Developers define the topology (sources, processors, sinks) and Kafka Streams handles task creation and management. However, you can configure task behavior through properties like:
+
+processing.guarantee=exactly_once_v2
+state.dir=/your/state/dir
+replication.factor=2
+num.standby.replicas

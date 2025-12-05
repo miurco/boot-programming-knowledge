@@ -1,0 +1,53 @@
+What scala 3 brings ?
+===================
+
+Connect with foundations
+ - Intersection and union types (DOT)
+ - More powerful function types: polymorphic, dependent, implicit (IS)
+ - Type lambdas
+ - Meta programming with quotes and splices+inline
+
+
+ Simplify life as a programmer
+  - Top level defininitions
+  - Enums
+  - Trait parameters
+  - Exports
+  - C(...) instead of new C(...)
+
+
+
+Restrict unnecessary or unsage features
+  - Method calls always `.`  unless declared @infix
+
+
+Replacements
+
+   Exports + toplevel def         for        Package objects
+
+   Givens                         for        implicit defs, vals, objects conversions
+
+   Extension methods              for        implicit classes
+
+   Inline + staging + match types for      Current macros
+
+
+Access modifiers / Scoping
+
+types
+----
+  traits
+  abstract classes
+  classes
+  case classes
+  objects
+  case objects
+  enums
+
+  //private, no access to x & y from outside world
+  class Point(x:Int, y:Int)
+
+  // open access to x, y is still private
+  class Point(val x:Int, y:Int)
+
+  case classes automatically provide only read access to its fields

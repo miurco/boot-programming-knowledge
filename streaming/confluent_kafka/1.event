@@ -1,0 +1,49 @@
+What is an Event ?
+
+
+An Event is a combination of a Notification + State
+
+State 
+ - ussually very small
+ - represented in some structured format: json, avro, prot
+
+Kafka
+---------
+
+Kafka has a little bit of data model for an Event, and an Event in Kafka is modeled as a Key|Value pair.
+
+Internally in Kafka, Key and Value are sequences of bytes.
+
+Kafka internally is loosely typed, while outside world most of the time is having a structure
+
+
+
+
+
+
+                                                        +---------+
+                     structured data                    | ver/des |                       Key/Value   
+                 (any programming languages)            | process |                  (Value - text/binary)
+                                                        +---------+                  (Key - binary)
+
+
+Value - is ussually the representation of an application domain object 
+
+Key - can be complex domain objects serialized with all those same formats, but are often just primitive types like string or integers
+		 The Key part of the Kafka object is probably no a unique identifier for the event.
+		 The Key is more like identifier of some entity in the system like an user or an order or a particular connected device.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

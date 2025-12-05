@@ -1,0 +1,39 @@
+
+Don't put the car in front of the horse
+  Don't jump to solution until you have defined overall architecture characteristics
+
+
+
+
+    +----------------+                     +---------------------+              +------------------+
+    |Start from the  |                     |identify architecture|              |Forming a solution|
+    |requirements    |                     |characteristics      |              |                  |
+    +----------------+                     +---------------------+              +------------------+
+
+
+
+feasibility ==> layered architecture
+agility ==> microservice architecture
+elasticity ==> space based architecture
+scalability ==> event driven architecture
+
+
+
+Architectural patterns and style
+================================
+
+Each of the architecture style or pattern promotes certains architecture characteristics out of the box
+
+
+
+
+
+
+
+
+
+
+
+
+
+

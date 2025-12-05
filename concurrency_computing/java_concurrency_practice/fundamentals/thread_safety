@@ -1,0 +1,30 @@
+
+
+Thread-Safe
+-----------
+The issue:
+    Mananging access to state, shared mutable state.
+
+
+An object's state encompasses any data that can affect it's externally visible behavior.
+
+
+The primary mechanism for synchronization in java is
+   - "synchronized" which provide exclusive lock
+   - volatile variables
+   - explicit locks
+   - atomic variables
+
+
+Correctness means that a class conforms to its specification. A good specification defines invariants constraining an object's state and postconditions describing the effects of its operations.
+
+
+!!!!!!!!!!!
+A class is thread-safe if it behaves correctly when accessed from multiple threads, regardless of the scheduling or interleaving of the execution of those threads by the runtime environment, and with no additional synchronization or other coordination on the part of the calling code.
+
+
+
+If the loose use of “correctness” here bothers you, you may prefer to think of a thread-safe class as one that is no more broken in a concurrent environment than in a single-threaded environment.
+
+
+Stateless objects are always thread-safe.

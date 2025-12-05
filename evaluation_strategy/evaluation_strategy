@@ -1,0 +1,64 @@
+
+Evaluation strategy
+         |
+         |         <Determine>
+         |
+         |          +-----------------------------------+
+         +--------- |                                   |
+         |          |When to evaluate the arguments     |
+         |          +-----------------------------------+
+         |
+         |
+         |          +-----------------------------------+
+         +----------|                                   |
+                    |What kind of values to pass        |
+                    +-----------------------------------+
+
+
+
+Modern languages have converged on a call-by-value/call-by-reference evaluation strategy for function calls.
+
+Purely functional languages like Haskell, use call by need
+ 
+
+
+STRICT EVALUATION(eager evaluation, greedy evaluation)
+=================
+
+In strict evaluation, the arguments to a function are always evaluated completely before
+the function is applied
+
+Examples of strict evaluation
+
+Call by value evaluation strategy
+Call by reference evaluatation strategy
+Call by sharing evaluation strategy
+Partial evaluation
+
+NON STRICT EVALUATION
+==================
+
+Arguments are not evaluated unless they are used in the evaluation of the function body
+
+Call by name
+Call by need (Lazy evaluation is an implementation of this strategy)
+
+
+NONDETERMINISTIC STRATEGIES
+===================
+
+Full b-reduction
+  Any function application may be reduced(substituting the function's argument into the function using capture-avoiding substitution) at any time
+
+Call by future, also called "parallel call by name"
+    Is a concurrent evaluation strategy in which the value of a future is computed concurrently with the flow of the rest of the program with promises. This is evaluated only once, and computation may be deferred until the value is needed. 
+
+    If implemented with processes or threads, creating a future will spawn one or more new processes or threads (for the promises), accessing the value will synchronize these with the main thread, and terminating the computation of the future corresponds to killing the promises computing its value. 
+
+    If implemented with a coroutine, as in .NET async/await, creating a future calls a coroutine (an async function), which may yield to the caller, and in turn be yielded back to when the value is used, cooperatively multitasking.
+
+Optimistic evaluation
+  Optimistic evaluation is another call-by-need variant where the function's argument is partially evaluated for some amount of time (which may be adjusted at runtime). After that time has passed, evaluation is aborted and the function is applied using call by need.
+
+
+

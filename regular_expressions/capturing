@@ -1,0 +1,13 @@
+Capturing
+
+Capturing with '()'
+Reffering to the capture '\1', '\2', and so on ...
+
+match any character immediately followed by itself
+grep -P '(.)\1' text.txt
+
+grep -P '(.)(.)\1\2' text.txt OR grep -P '(..)\1'
+
+echo '123' | sed -E 's/[0-9]/z/'
+
+echo '123' | sed 's/\(.\)\(.\)/\2\1/'

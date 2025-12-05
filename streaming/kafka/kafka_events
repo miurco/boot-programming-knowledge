@@ -1,0 +1,51 @@
+
+Appache Kafka is an event streaming platform used to collect store and process in real time data stream at scale
+
+
+Event
+------------------
+An event is just a thing that has happened
+
+An Event could be percieved as a notification with some state(information)
+
+The state could be represented as json, binary(avro, protocobuffer, thrift)
+
+Event in kafka, internaly Key and Value are just sequences of bytes
+Kafka internally is loosely type
+
+
+
+                   +---------------+
+                   |  +---------+  |
+                   |  |   Key   |  |
+                   |  +---------+  |
+                   |  +---------+  |
+                   |  |  Value  |  |
+                   |  +---------+  |
+                   |               |
+                   +---------------+
+
+
+
+Some kind of structure to the data,    application <------> kafka
+
+																			serialization/deserialization
+
+The serailzed object usually is a representation of a domain application object. The structure is very important
+
+
+Key - can be complex type, usually a primitive. A key in kafka message is not like a primary key in databse or uuid. 
+It's more like an identifier of some entity in the system, like an user, or order.
+
+
+
+
+
+
+
+
+
+
+                                     
+
+

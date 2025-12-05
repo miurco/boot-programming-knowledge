@@ -1,0 +1,73 @@
+
+
+                                               OSI Model
+
+
+													Application
+													Presentation
+													Session
+													Transport 
+													Network 
+													Data Link
+                          Physical
+
+
+     10001011010101000 this goes to destination1, destination2, destination3 ...
+                                             
+                 +---------+
+                 |10.0.0.5 | _       
+                 +---------+  \_     
+                                \_   
+                                  \_+--------+
+                                    \   R    |
+                                    |10.0.0.1|                        
+                                    +--------+
+
+
+           +-------+         +-----+ 
+           | http  |         |sfpt |                
+          |+-------|         +-----+ 
+         /  v1/v2   \   
+      1 /           |   
+       /             \ 2                            socket, is it http, tcp, udp ???
+      /              |  
+    gRPC              \ 
+                      | 
+                  +----\--+
+                  |  TCP  |
+                  +-------+
+
+
+                                              OS sockets
+
+
+1.Creation
+Socket is represented as a file descriptor, which is an integer used to identify an open file or socket within the process.
+
+2. Binding
+Socket needs to be bound to a specific address and port on the local machine.
+
+                 Network Interface & Port 
+
+3. Listening
+If Server socket --> Listening on the assigned port. In this state sockets waits for incomming connection requests from clients.
+
+4. Connecting
+If Client socket -->  initiate a connection to a remote server.The operating system performs the necessary network operations to establish a connection, such as TCP SYN packets in case of TCP/IP connections.
+
+
+5. Accepting Connection(Server Socket)
+When server socket receive a client socket connection request the server socket transitions from listening to state to established state and accept incoming connection request. Upon accepting the a connection, the server socket creates a new "client socket" or "peer socket" to handle communication with the specific client.
+
+6. Data transfer
+For stream-oriented sockets(e.g TCP), data is transmitted in a continuous stream and is guaraneed to arrive in the same order it was sent.
+For datagram-oriented sockets(e.g UDP), data is transmitted in discrete packets without any guarantee of the order or reliability.
+
+7. Socket Closure
+
+
+Through this process, the OS kernel manages the state of each socket, handles network I/O operations, and ensure proper data transmission between endpoints.
+
+
+
+

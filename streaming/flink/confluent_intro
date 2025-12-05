@@ -1,0 +1,50 @@
+
+Flink concepts on this page
+
+
+
+             +----------------+             +--------------+
+             |                |             |              |
+             |   Streaming    |             |  State       |
+             |                |             |              |
+             +----------------+             |              |
+                                            +--------------+
+
+             +---------------+              +--------------+
+             |               |              |              |
+             |   Time        |              |  Snapshots   |
+             |               |              |              |
+             +---------------+              |              |
+                                            +--------------+
+
+
+
+
+
+
+Sources --------------------------------------------> Flink --------------------------------------------> Sinks
+
+                                                                                                                
+Files,                                              Real-time Stream                                      Datbases          
+Databases key/value store,                          Processing                                            Kafka
+Kafka,
+Apps
+
+
+                                                   Stream processing business logic
+                                                   goes in here, by using Flink Api,
+                                                   and Flink will execute your code
+                                                   in a Flink Cluster.
+
+
+
+
+
+Stream Processing
+
+
+Running a Flink 
+
+
+
+

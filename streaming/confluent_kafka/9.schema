@@ -1,0 +1,17 @@
+Compatibility
+
+BACKWARD
+FORWARD
+FULL
+BACKWARD_TRANSITIVE
+FORWARD_TRANSITIVE
+FULL_TRANSITIVE
+NONE
+
+
+BACKWARD - Consumers using new schema can read data produced with the last schema.
+BACKWARD_TRANSITIVE - Consumer using new schema can read data produced with x-1, x-2, x-3 schemas
+Removal of a field. A consumer that was developed to process events without this field will be able to process events with old schema and contain the field - the consumer will just ignore that field.
+
+
+FORWARD - Data produced with new schema can be read by consumers using last schema.

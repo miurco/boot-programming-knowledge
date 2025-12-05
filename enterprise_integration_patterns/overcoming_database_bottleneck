@@ -1,0 +1,5 @@
+
+Key words: Scaling, stateful
+
+
+One of the issue that needs to be addressed is overcoming the bottleneck imposed by traditional database systems when scaling stateful application.

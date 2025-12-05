@@ -1,0 +1,90 @@
+what is Agile ?
+what is XP ?
+what is Kanban/Scrum ?
+what is Lean
+
+
+Kent Beck developed extreme programming
+XP - software development methodology
+  - adovcate releases in short development cycles
+  - programming in pairs
+  - doing extensive code review
+  - unit testing of all code
+  - a flat management structure
+  - expecting changes in customer's requirements
+  - frequent communication with customers and among programmers
+
+  The methodology take best practices to extream levels
+
+
+  Activities
+  ==========
+
+  Coding 
+  ------
+  Without code there is no working product. Code also commnunicates thoughts.
+  Other programmers can give feedback on this by also coding their thoughts
+
+  Testing
+  ------
+
+  Listening
+  ------
+
+  Designing
+  ------
+
+
+  Values
+  ==========
+
+  Communication
+  Simplicity
+  Feedback
+  Courage
+  Respect
+
+
+  Rules
+  ==========
+
+  Coding
+   No overtime
+   Leave optimization until last
+   The customer is always available
+   Code the unit test first
+  Testing
+   All code must have unit tests
+   All code must pass all unit tests before it can be realeased
+   When bug found => tests are created before bug is addressed
+   Acceptance tests are run often and the results are published
+
+  Principels
+  ==========
+
+  Feedback
+  Assuming simplicity
+  Embracing changes
+
+
+  Practices
+  ===========
+
+  12 practices grouped into four areas
+
+  Fine-scaled feedback
+    Pair programming
+    Planning game
+    TDD
+    Whole team
+  Continuos process
+    Continuous integration
+    Refactoring or design improvement
+    Small Releases
+  Shared understanging
+    Coding standards
+    Collective ownership
+    Simple design
+    System metaphor
+  Programmer welfare
+    Sustainable pace

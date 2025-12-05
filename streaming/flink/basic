@@ -1,0 +1,26 @@
+Logical Graph, Data flow
+
+Operator - an operation processing incoming data. map, filter, window, etc
+Task - Think of it like a thread
+
+Operator/Task Communication
+
+
+Keyd Streams(Parallelism and Partitioning)
+	A Keyd Stream partition stream by a key, ensuring that all the events with the same key goes to the same Task
+	This enables parallelism, as different keys are processed by different tasks on potentially different nodes
+	keyBy triggers data shuffling across the network to group all events with the same key to the same task
+	Each key becomes a separate sub-stream(logical grouping) processed independentely.
+
+Chained Streams
+	Chain operators like map, filter, etc. into a single task, so they execute sequentially within the same thread
+	No shuffling, serialization, or network communication between chained operators
+	Flink automatically chains compatible operators into the same task unless explicitly disabled using .disableChaining() or .startNewChain().
+
+
+More on Tasks
+
+Task in Flink represent a unit of execution. It coresponds to a THREAD that executes one or more [CHAINED OPERATORS]
+Flink programs consists of [ LOGICAL OPERATORS ] like map, filter, keyBy
+At runtime, Flink groups [OPERATORS] into [TASKS] based on the [CHAINING CONFIGURATION]
+Each [TASK] is executed by a [TASK SLOT] in a taskmanager(flink worker node)

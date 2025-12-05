@@ -1,0 +1,102 @@
+                                                    PIPELINE ARCHITECTURE
+
+
+Map reduce is using pipeline architecture style
+Functional programming style is a pipeline architecture style
+
+
+
+
+
+
+
+
+This is another monolithic architecture style, however it is one that you can create modular monoliths
+
+
+Two main components:
+
+
+
+                    +--------------+   pipe       +---------------+  pipe
+                    | filter       |-----------|> |filter         | ------|>
+                    +--------------+              +---------------+
+
+
+
+PIPES:
+             unidirectional only
+             usually point-to-point 
+             payload can be of any type
+
+
+
+FILTERS 
+ 
+
+
+
+                         pipe     +-------------+   pipe
+                        --------->|  filter     |---------->
+                                  +-------------+
+
+                                  self contained and independent from other filters
+                                  usually designed to perform a single specific task
+                                  four types of filters: producer, consumer, transformer, and tester
+
+
+
+
+                                 usually the starting point of an application, it doesn't have an input(outbound only)
+
+                                +-------------+
+                                | producer    |---------->
+                                +-------------+
+
+                                +-------------+
+                        ------->| tester      |-----------> input, discard or pass-thru
+                                +-------------+
+
+                                +-------------+
+                        ------->| consumer    |        ending point(inbound only)
+                                +-------------+
+
+
+
+example:
+                capture data in multiple formats, process the data, and send to multiple outputs
+
+
+
+
+                  
+                          +---------------+    text         +------------------+     xml           +----------------+
+                          | text capture  | ------------->  |  text converter  | -------------->   | process engine |
+                          +---------------+                 +------------------+    +---------->   +----------------+
+                                                                                    |                     |
+                          +---------------+   json          +------------------+    |xml                  |
+                          | json capture  |---------------->|  json converter  | ---+                     |   processed xml
+                          +---------------+                 +------------------+                          |
+                                                                                                          |
+                                                                                                          |
+                                                                                                          v
+                                                           +----------------------+                +-----------------+
+                                                           |  file output         |  <------------ |   file output   |
+                                                           +----------------------+                +-----------------+
+
+
+      Isn't event driven architecture the same as pipeline architecture ?
+
+
+                             | pipeline                   | event driven                     |
+                             +============================+==================================+
+                             | synchronous data filtering | asynchrounous event processing   |
+                             +----------------------------+----------------------------------+
+                             | always unidirectional      | can be request/reply             |
+                             +----------------------------+----------------------------------+
+                             | simple single purpose      | complex multi-purpose processors |
+                             +----------------------------+----------------------------------+
+                             | monolithic architecture    | distributed architecture         |
+                             +----------------------------+----------------------------------+
+
+

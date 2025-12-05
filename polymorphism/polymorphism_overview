@@ -1,0 +1,37 @@
+
++---------------------------------------------------------------------------------+
+|                              POLYMORPHISM                                       |
+|                                                                                 |
+| POLYMORPHISM IS PROVISION OF A SINGLE INTERFACE TO ENTITIES OF DIFFERENT TYPES  |
+| OR THE USE OF A SINGLE SYMBOL TO REPRESENT MULTIPLE DIFFERENT TYPES             |
+|                                                                                 |
++---------------------------------------------------------------------------------+
+
+Not to confuse with: Inheritance, Subtyping
+
+How polymorphism is expressed ?
+
+How polymorphism is implemented ?
+
+
+                   +--------- static
+Dispatching -------+
+                   +--------- dynamic
+
+
+
+             +----------+
+             | AD HOC   |
+             +----------+
++-----------------------------------------------+
+| Defines common interface for an arbitrary     |
+| set of individually specified types           |
+|                                               |
+| Ad hoc polymorphism is a kind of polymorphism |
+| in which polymorphic functions can be applied |
+| to arguments of different types               |
+|                                               |
+|                 f(Type A)                     |
+|                 f(Type B)                     |
+|                 f(Type C)                     |
++-----------------------------------------------+

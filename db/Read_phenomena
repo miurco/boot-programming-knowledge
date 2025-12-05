@@ -1,0 +1,33 @@
+
+READ PHENOMENAS
+===============
+
+
+
+Dirty reads
+-----------
+T1 can read data that was changed by another transaction T2 that failed to be committed.
+So, you end up operating upon a wrong data in T1. T1 should not read data until "write lock" is released by T2 --> READ_COMMITED
+Note: READ_COMMITED isolation level only guarantees that any data read is committed at the moment it is read, but it does not prevent
+other transaction modifying the data after it has been read by current transaction. It keeps the lock during read operation only.
+
+Non-repeatable reads
+-----------
+Why would you need repeatable reads ? It's actually the operation that operates upon the same piece of data.
+
+So, in the boundaries of a transaction you are making two queries upon the same data
+and the data from the first query isn't equal to the data in the second query, looks like it
+has been changed by another transaction. REPEATABLE_READS isolation avoids this phenomena
+
+
+Phantom reads
+-----------
+
+Another transaction T2 inserted a new row and I(T1) I picked it up when I should not
+
+
+Lost updates
+-----------
+
+When data of T1 is overwritten by another transaction T2 before T1 is committed.
+

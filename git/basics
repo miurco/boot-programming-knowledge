@@ -1,0 +1,46 @@
+
+Architecture
+=========
+
+commit ---> tree ---> [tree, blob]
+
+       <pathspec>, used to limit the action to a specific path
+
+       git-restore - Restore working tree files. I guess no merging is performed
+
+       git-checkout - Switch branches or restore working tree files. Merge might happen here, check it
+
+
+
+
+
+
+
+                             | action      | Working area | Index(staging) | Repo |
+                             +=============+==============+================+======+
+                             | restore     |              |                |      |
+                             +-------------+--------------+----------------+------+
+                             | diff        |              |                |      |
+                             +-------------+--------------+----------------+------+
+                             | checkout    |              |                |      |
+                             +-------------+--------------+----------------+------+
+                             | cherry pick |              |                |      |
+                             +-------------+--------------+----------------+------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

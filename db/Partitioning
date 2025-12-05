@@ -1,0 +1,63 @@
+
+           +----------------------+
+Issue:     | Long running queries |
+           +----------------------+
+
+
+Tables containing large amounts of data may begin to experience performance issues
+with long running queries and data manipulation operations.
+
+                      
+                         Table(Data Set)
+
+
+              +--------+       +---------+       +---------+
+              |  ds1   |       |  ds2    |       |  ds3    |
+              +--------+       +---------+       +---------+
+                  p1               p2                p3
+
+
+This approach can:
+  1) enhance query performance
+  2) reduce storage requirements
+  3) boost processing by enabling parallel processing
+
+
+Database partitioning involves spliting a logical database into distinct, independent parts.
+
+
+
+                                          Partition Strategies
+
+
+
+            +----------------------+                     +-----------------------+
+            |vertical partitioning |                     |horizontal partitioning|
+            +----------------------+                     +-----------------------+
+
+
+   - each partition is a subset of the columns            - each partition is a subset of the rows
+     from the original table.                             from the original table.
+   
+   - manage columns that are frequently updated                
+
+
+
+
+Sharding
+----------------
+A database shard is a horizontal partition of data in a database or search engine.
+Each shard is hold on separate database server instance, to spread load.
+
+Is a subset of partitioning where different Shards are distributed across distinct machines or nodes. 
+This structure offers severals benefits, 
+  a) improved scalability
+  b) higher availability
+  c) enhanced parallel processing, 
+  d) and faster query execution.
+
+
+
+
+
+

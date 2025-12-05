@@ -1,0 +1,53 @@
+                                        TRANSACTION AND CONCURRENCY
+
+[] Defining database and system transaction essentials
+[] Controlling concurrent access with Hibernate and JPA
+[] Using non-transactional data access
+[] Managing transactions with Spring and Spring Data
+
+
+
+
+          +---------------+  tx1
+          | unit of work 1| ___                  
+          +---------------+    \____                         tx = session.beginTransaction()
+          +---------------+ tx2     \____                    // do some work
+          | unit of work 2|_____         \____               tx.commit
+          +---------------+     \_________    \__ Session    catch(Exception): tx.rollback()
+          +---------------+               \_  ___   |        finally: session.close()
+          | unit of work 3|              ____/      |
+          +---------------+  tx3   _____/           |
+          +---------------+   ____/                 |
+          | unit of work 4|__/                      |
+          +---------------+                         |
+                                                    |
+                                                  +------+      is session shared between threads ?
+                                                  | DBMS |
+                                                  +------+
+
+
+----------------------------------------------------------> 
+(time)          T1
+
+
+Example of several things that should be in one go
+1) Find the winning bid for the auction
+2) Charge the seller of the item the cost of the auction
+3) Notify the seller and successful bidder
+
+
+Data base transactions have to be short because open transactions consume data base resources and potentially prevent concurrent access due to exclusive locks on data.
+
+
+Understanding database-level concurrency
+----------------------------------------
+
+a) Complete isolation comes at high price
+
+b) By decreasing isolation level you can increase performance and scalabilty of the system
+
+c) Concurrent transactions should be isolated, what level ?
+
+Bad things that can occur and transaction isolation can prevent
+lost update, dirty read, unrepeatable reads, phatom read
+

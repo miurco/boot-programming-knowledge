@@ -1,0 +1,26 @@
+
+Machine Learning, a field of study in AI concerned with study and development of statistical algorithms.
+This algorithms are used to learn from data and generalize to unseen data, and thus can be used to perform tasks without explicit instructions.
+
+Model: A trained function, e.g BERT, LLaMA, GPT2, think of it as .safetensors, .pt, or .bin.
+List of LLM: GPT-1(OpenAI), BERT, T5, GPT-2(OpenAI), GPT-3(OpenAI), GPT-4(OpenAI) Claude(Anthrophic), Gopher, OPT(Meta), YaLM(Yandex), AlexaTM(Amazon), LLaMA(Meta), Llama 2(Meta)
+Claude 2(Anthrophic), Mistral(Mistral AI), Grok 1(xAI), Gemini 1.0(Google Deep Mind), Llama 3.1, Llama 4(Meta AI)
+
+LLM: A specific kind of model trained on huge text corpora for language task.
+LLM: is a type of Machine Learning model
+LLM: A specific type of Machine Learning model trained on vast amounts of text to understand and generate human language.
+
+GPT: A specific architecture/approach for building LLMs
+
+Claude: Antrophic's conversational AI assistant(also an LLM based product)
+LLaMA - Meta's family of open-source language models
+
+The right question would be how to create an inteligent assistent based on Machine Learning.
+Build a LLM ? LLM are built using GPT
+
+
+Since there are a lot of LLMs from different vendors there should be a standard way of accessing/running models. Or there should be a platform that would run this models regardless of the vendor.
+
+Cause an tool like VS code that wants to integrate with multiple models has to provide different implementation for each ll model isn't it  ?
+
+

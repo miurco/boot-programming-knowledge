@@ -1,0 +1,4 @@
+
+Pessimistic - blocks operation of a transaction, if it may cause violation of the rules
+(e.g., serializability and recoverability), until the possibility of violation disappears.
+Blocking operations is typically involved with performance reduction.

@@ -1,0 +1,65 @@
+
+
+The ship sank because the architect tried to implement ALL the requirements
+
+
+
+
+Architecture tradeoff analysis method(ATAM)
+============================================
+                                                                                        
+                                                                                            
+
+
+        ATAM process doesnt work well and how to make it work in nowdays
+        ------------------------
+
+
+                                                                        +------------+
+                            proposed architecture ------------|>        |            |
+                                                                        |            |            
+                                                                        |            |            
+                                                                        |            |            Validate and
+                            business drivers -----------------|>        |            |  =====>    approved architecture
+                                                                        |            |            
+                                                                        |            |            
+                                                                        |            |            
+                            quality attributes ---------------|>        |            |
+                                                                        +------------+
+
+
+
+        Phases
+
+          partnership and preparation: get stakeholders all together, define the roles, discuses the goal, approach, and time frame, logistics
+          evaluation phase1: stakeholders giving us the scenarios, they could be functional/operational scenarios. Our goal is to find holes. During this process we start doing the tradeoffs here (high performance and availability)
+          evaluation phase2: rework
+          followup:
+
+          There are couple of problems, it does assume that all stakeholders are in the same room. Maybe you don't want them to be in the same room :), or they are not available
+
+          The key here is to focus on the Goal of ATAM not necesarily on the process
+
+          The ATAM Goal:
+          =============
+              Create an architecture presentation
+              Validate the architecture and establish trade-offs
+              Identify and mitigate risk
+              Get stakeholders buy-in, even the developers
+
+
+        Cost Benifit Architecture Method(CBAM)
+        -------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+

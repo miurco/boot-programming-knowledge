@@ -1,0 +1,30 @@
+Concurrency:
+
+  ☐ How is concurrency implemented and how does it looks like on code level for different languages ?
+
+  ☐ Concurrency at different levels
+      ☐ concurrency computing where systems are build on top of multiple computers (probably akka)
+
+
+Coroutine:
+
+  ☐ What is the difference between coroutines and threads
+
+
+
+  I know there is parallel execution models. That are complex because they involve multiple timelines. 
+
+
+☐ Languages that support concurrent programming vs Languages that support parrallel programming
+      This is very confusing me, define some clarity or boundaries or better abstractions
+      is possible to have concurrency without parallelism - yes
+      distributed computing is by default parallel computing
+
+
+ 
+
+
+
+
+
+

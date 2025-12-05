@@ -1,0 +1,87 @@
+system memory management
+software program management
+hardware management
+filesystem management
+
+
+memory location grouped in pages
+
+init process can be told what run level to run
+
+
+run levels
+  1 - only the basic processes are started with one console terminal
+  3 - init, network, ect
+  5 - level where the system starts the graphical X Window software, and allows to login with gui
+
+device drivers are compiled to in the kernel either added as modules to the kernel
+
+
+device files
+  1. Character, are for devices that can only handle on character at a time
+  2. Block, such as disk devices
+  3. Network, used for devices that use packets to send and receive data
+    Network cards, loopback device that allows Linux to communicate with itself using common
+    network programming protocols
+
+
+
+                 +------------------------------+      +----------------------+
+                 |       Computing Machine      |      | computing machine    |
+                 |    Linux Operating System    |      |                      |
+                 +------------+-----.-----------+      +----------------------+
+                             _|_   /_\
+                             \ /    |
+                 +------------'-----+-----------+
+                 |        loopback              |
+                 +----------+-------.-----------+
+                           _|_     /_\
+                           \ /      |
+                 +----------'-------+----------------------------------------------+
+                 |                          Network                                |
+                 +-----------------------------------------------------------------+
+
+      
+
+                   node(device node)-------- device
+
+
+kernel supports multiple filesystems
+
+
+The GNU organization developed a complete set of Unix utilities, but had no kernel system to them on
+This utilities were developed under a software philosophy called open source software
+
+Uniting Linus's Linux kernel with the GNU operating system utilities created complete, functional, free operating system
+
+
+GNU coreutils package
+  - utilities to handle files
+  - utilities for manipulating text
+  - utilitie for managing processes
+
+
+Shell - the interactive utility. Core of this utility is the command prompt(the interactive part of the shell)
+
+
+linux desktop environment
+
+1)
+video card in the pc and the monitor: The X Window Software. Controls how Linux applications present fancy windows and graphics
+Other operating systems can use it. In linux world several implementations of X Window System such as X.org
+
+Wayland - Fedora
+Mir - Ubuntu
+
+2)
+A desktop environment on top of X Window System
+
+
+Shells, how do you get to the shells ?
+
+
+Console Terminals - take linux system out of the ui and will get the Linux Console mode
+Graphical Terminals - simulates working on a console terminal but within a desktop graphical window 
+
+virtual console terminals - as CLI terminals outside the GUI
+graphical terminal emulators - as CLI terminals in the GUI

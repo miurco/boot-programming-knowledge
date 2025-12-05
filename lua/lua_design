@@ -1,0 +1,31 @@
+
+
+Properties of Lua language that make it stand out of the crowd from other scripting languages
+
+> simplicity, small size, portability, and embeddability
+
+> since inception lua was designed to interoperate with other languages
+
+
+
+
+
+
+                                                   +-----------------------+
+         +------------------------+                |                       |
+         |       +--------------+ | <------------- |  Your application     |
+         |  LUA  |  C Runtime   | | -------------> |                       |
+         |       +--------------+ |   controlling  |                       |
+         +------------------------+   configuring  +-----------------------+
+                  |
+                  |
+                                                    1. Initialize Lua state
+              lua script 1                          2. Running Lua scripts
+                                                    3. Calling Lua functions from C
+              lua script 2                          4. Calling C functions from Lua
+
+
+
+Nginx
+Angry Birds
+World of Warcraft

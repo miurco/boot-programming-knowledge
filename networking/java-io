@@ -1,0 +1,66 @@
+
+Streams
+Java programs performs I/O through streams. A stream is an abstraction that either consumes or produces information.
+A stream is linked to a physical device by the Java I/O systems.
+
+An input stream can abstract many different kinds of input: from disk file, a keyboard, or a network socket.
+
+
+
+                                           
+                       network connection      memory buffer
+                                     |              |
+                                     |              |                   disk file
+                                     |              |                      |
+                                     +--+                                  |
+                                        +----->  external data   <---------+
+
+
+
+                All this different physical devices are handled by the same abstraction: stream
+
+
+
+
+
+                                 Stream based I/O
+                                 Buffer based I/O - defined in java.nio
+                                 Channel based I/O - defined in java.nio
+
+
+
+                                                                  +-----------------------------------------------------+
+                            I/O Stream                            |      Reader                                         |
+                                                                  |      Writer                                         |
+                                                                  |                                                     |
+                                                                  |                                                     |
+             +-------------+         +-------------------+        |   BufferReader                                      |
+             |Byte Streams |         | Character Streams |--------|   CharacterArrayReader                              |
+             +-------------+         +-------------------+        |   FileReader                                        |
+                   |                                              |   InputStreamReader                                 |
+                   |                                              |   StringReader - Input stream that reads from a str |
+                   |                                              |                                                     |
+                   |                                              +-----------------------------------------------------+
+                   |
+                   |
+                   |
+         +--------------------------------------------------------------------------------------------------------+
+         |                                                                                                        |
+         |    InputStream                                                                                         |
+         |    OutputStream                                                                                        |
+         |                                                                                                        |
+         |    BufferedInputStream                                                                                 |
+         |    BufferedOutputStream                                                                                |
+         |    ByteArrayInputStream - Input stream that reads from a byte array                                    |
+         |    ByteArrayInputStream                                                                                |
+         |    DataOutputStream - an output stream that contains methods for writting the Java standard data types.|
+         |    FileInputStream                                                                                     |
+         +--------------------------------------------------------------------------------------------------------+
+
+
+
+
+
+
+
+

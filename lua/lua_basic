@@ -1,0 +1,25 @@
+
+Data Description:
+table, strings, number, booleans
+
+Tables ---> represents
+             1) arrays
+						 2) dictionaries
+						 3) objects
+						 4) other complex data structure
+
+
+
+Track of your thoughts, priorities in what you do
+--------------
+[v] Gather knowledge/resources
+ - https://www.lua.org/doc/cacm2018.pdf, a look at the design of Lua
+ - https://www.lua.org/pil/contents.html
+[x] Execute Lua from neovim
+[v] Execute Lua from cli
+[v] Repo for lua practicing
+[v] Use of closures to configure nvim java environment
+
+
+how is it embbeded into c ?
+how does it extend an application ?

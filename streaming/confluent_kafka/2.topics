@@ -1,0 +1,7 @@
+Kafka's fundamental unit of Event organization is called a TOPIC
+
+
+- Named container for similar events
+- Durable logs of events
+   - append only
+   - can only seek by offset, not indexed

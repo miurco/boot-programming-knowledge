@@ -1,0 +1,5 @@
+external commands ---> executes in a child process :: forking
+expensinve to create new child process
+
+builtin commands ---> no forking required
+

@@ -1,0 +1,120 @@
+
+
+                                                        Two flavour of event driven architecture
+
+
+
+
+
+                                       +----------------------+              +-----------------------+
+                                       | Broker topology      |              | Mediator topology     |
+                                       |                      |              |                       |
+                                       +----------------------+              +-----------------------+
+
+
+Broker Topology
+
+Mediator topology
+
+
+
+4 Key Types of EDA
+---------------------
+                                             1. An event happens in a business that is important enough
+ Events and Records                             for the business to want to take note of it.
+ Ephemeral messaging
+ Queues
+ Publish Subscribe                Purchase      Iot device
+                                      *          *
+
+
+                                   +------------------+
+                                   |                  |
+                                   |    Service       |
+                                   |                  |
+                                   |                  |
+                                   +------------------+
+                                            |
+                                            |
+                                  +----------------------+
+                                  |    Record/Message    | We can react to it --> Event-Driven Architecture
+                                  +----------------------+
+
+
+1. Application internal
+
++--------------------------------------------------------+
+|   +----------+        +----------+                     |
+|   |c         | -->    |c         |                     |
+|   |  r       |        |   r      |                     |
+|   |      c   |  <--   |        c |                     |
+|   +----------+        +----------+                     |
+|       i1                   i2                          |
+|                                                        |
+|                                                        |
+| process create records that used by another process in |
+| the same application. Example: akka, go                |
+|                                                        |
++--------------------------------------------------------+
+
+
+
+2. Ephemeral
+
+It means it is temporary, it is not durable retained.
+
+                           <writes records>
+             +----------+        +--------+
+             |   Sender | ---->  |Subject |             Receiver 1
+             +----------+        +--------+
+                                    ---+---             Receiver 2
+        Enterprise Service Buses       |   
+        Goal:                          |
+          1. To decouple               |    Receiver 2 will receive the message only if it is online
+          2. For high volume of fanout |    at the time the message was sent to Subject. 
+                                       |
+                                       |    If Rec is offline and it comes back then it will not receive
+                                       |    the message. The message has not been retained.
+                                       |
+                                    ---+---
+
+
+
+
+3. Queues (JMS)
+A Queue is an append only ordered list
+
+
+
+                                                                    +----------------------------------------------+
+                                                                    |                                              |
+                                                        Consumer 1  |  Consume oldest Record, notify the broker.   |
+                                                                    |  We only keep the records in the queue for   |
+                         +-----------------+                        |  as long as it takes for them to be processed|
+     Producer            |    R4 R3 R2 R1  |                        +----------------------------------------------+
+                         +-----------------+                       +-----------------------------------------------------+
+                                                        Consumer 2 | You can have multiple consumer but R1 goes to c1, R2|
+                                                                   | goes to c2.                                         |
+                                                                   +-----------------------------------------------------+
+
+                  Two popular examples of Brokers that implements Queues
+
+
+                     +---------+              +---------+
+                     |RabbitMQ |              |ActiveMQ |
+                     +---------+              +---------+
+
+
+
+
+
+4. PUB/SUB - Often called streaming.
+
+
+                                                              Much like a Queue. Records are durable
+                                 +----------------+
+                                 |  Topic         |
+                                 | +----------+   |
+                                 | | R1 R2 R3 |   |
+                                 | +----------+   |
+                                 +----------------+

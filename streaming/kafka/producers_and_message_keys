@@ -1,0 +1,62 @@
+
+                        +------------------+ 
+                        | Topic A - part 0 | 
+                        +------------------+ 
++----------+            +------------------+             
+| Producer |            | Topic A - part 1 |             
++----------+            +------------------+             
+                        +------------------+             
+                        | Topic A - part 2 |                        
+                        +------------------+                        
+                                                                    
+                        for sake of simplicity
+                        all are on same broker
+
+
+
+                                                                    
+
+Producer decides in advance to which partition the data should go to.
+
+Producers can choose to send a key with the message(string,number,binary,etc)
+
+If key=null, data is sent round robin (partition 0, then 1, then 2...)
+
+If key!=null, then all messages for that key will always go to the same partition(hashing)
+
+
+
+Kafka Messages anatomy
+------------------------
+
+
+                         +-------------------------------------------------+  
+                         |                       |                         |  
+                         |      Key - binary     |     Value - binary      |  
+                         |      (can be null)    |     (can be null)       |  
+                         |                       |                         |  
+                         |-------------------------------------------------|  
+                         |                                                 |  
+                         |              Compression Type                   |  
+                         |           (none, gzip, lz4, ztd)                |  
+                         |                                                 |  
+                         |-------------------------------------------------|  
+                         |                                                 |  
+                         |              Headers(optional)                  |  
+                         |              key1 - value1                      |  
+                         |              key2 - value2                      |  
+                         |-------------------------------------------------|  
+                         |                                                 |  
+                         |                                                 |  
+                         |             Partition + Offset                  |  
+                         |-------------------------------------------------|  
+                         |                                                 |  
+                         |         Timestamp(system or user set)           |  
+                         |                                                 |  
+                         +-------------------------------------------------+  
+                                                                              
+
+
+
+
+

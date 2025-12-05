@@ -1,0 +1,2 @@
+ set - display all variables set for a specific process
+ env - display only the global environment variables

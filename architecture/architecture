@@ -1,0 +1,30 @@
+Software Architecture
+=====================
+
+Multiple Definitions
+----------------------
+    The software architecture of computing system is the set of structures needed to reason about the system, which comprise software elements, relations among them and properties of both
+
+    Software architecture referes to the fundamental structures of a software system and the discipline of creating such structures and systems 
+
+
+Software architecture is about making fundamental structural choices that are costly to change once implemented
+
+
+Documenting software architecture facilitates communication between stakeholders, captures early decisions about the high-level design, and allows reuse of design components between projects
+
+
+
+Architectural styles and patterns
+=====================
+
+An architectural pattern is a solution to a commonly occuring problem in software architecture within a given context
+Architectural patterns are often documented as software design patterns
+
+
+Architectural styles are reusable 'packages' of design decisions and constraints that are applied to an architecture to induce chosen desirable qualities.
+
+
+
+
+

@@ -1,0 +1,18 @@
+Podman is a container management tool that's an alternative to Docker, not to Kubernetes.
+
+Key differences from Docker
+	Daemonless, No background daemon process (unlike docker daemon) 
+	Rootless, Can run containers without root privileges
+	Docker-compatible CLI, Commands are nearly identical (podman run vs docker run)
+	Pod support, Can run groups of containers as pods (like Kubernetes)
+
+
+Dockerfiles are NOT Docker-Specific
+	Dockerfile syntax is actually standardized and used by multiple container tools.
+	Pod man uses Dockerfiles exactly the same way
+
+
+Why this works ?
+OCI Standards, it standardized the container image formats and build specifications
+	Buildah Integration, used to build the image which implement the same Dockerfile Spec
+	Industry Standard, Dockerfile are the de facto standard format, not proprietary to Docker

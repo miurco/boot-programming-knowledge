@@ -1,0 +1,57 @@
+
+A Hindley–Milner (HM) type system is a classical type system for the lambda calculus with parametric polymorphism.
+
+
+
+                                   type system      ---------------|> comprasing a set of rules
+                                          
+                                                                                 |
+                                                                                 |
+                                                                                 |
+                                                                                _|_
+                                                                                \ /
+                                                                                 ' 
+
+                                     type                           assign a property called a type
+                                       |                                       |
+                                       |                                       |
+                                       |                                       |
+                                       |                                       |
+                                       v                                       |
+                                   various constructs                          |
+                      +------------of a computer program                       |
+                 +----|---------------+----------+-----------+                 |
+                 |    |               |          |           |                 |
+                 |    |               |      expressions     |-----------------+
+                 |    |           functions                  |            
+                 | variable                    modules       |            
+                 +-------------------------------------------+            
+
+
+
+
+The main purpose of a type system is to reduce possibilities for bugs in computer programs by
+defining INTERFACES between different parts of a computer program, and then CHECKING that the parts
+have been CONNECTED IN A CONSISTENT WAY                                     
+
+
+                    Checking
+                       |
+                       |
+                       +------|>  Static(at compile time)
+                       |
+                       |
+                       +------|> Dynamicaly(at run time)
+                       |
+                       |
+                       +------|> As combination of both
+
+Type systems has other purposes such as
+  a) expressing business rules
+  b) enabling compiler optimization
+  c) allowing for multiple dispatch
+  e) providing a form of documentation
+  d) etc
+
+
+Type systems are often specified as part of programming languages and built into interpreters and compilers, although the type system of a language can be extended by optional tools that perform added checks using the language's original type syntax and grammar.

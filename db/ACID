@@ -1,0 +1,60 @@
+ACID
+=========
+
+A set of properties of database transaction intended to guaranty
+data validity despite errors, power failures, etc.
+
+Atomicity
+Consistency
+Isolation
+Durability
+
+
+Atomicity
+---------
+All or nothing
+
+
+Consistency
+---------
+  in RDBMS this are the constraints: foreign keys, uniques, etc
+
+
+Isolation
+--------
+
+Can my transactions see changes made by other transactions ?
+
+Read phenomena
+
+Isolation levels
+
+
+Isolation knob is in the hand of the engineer
+As a lack of isolation you get in "Read phenomenas"
+
+
+
+Data consistency models: ACID and BASE
+
+What is difference between ACID and BASE consistency ?
+
+	ACID databases prioritize consistency over availability - the whole transaction fails if an 
+	error occurs in any step within transaction.
+
+	BASE prioritize availability over consistency, instead of failing the transaction users can 
+	access incosistent data temporarly.
+
+
+	Consistency means all clients see the same data at the same time
+
+
+	ACID transactions are far more pessimistic, they are worried about the data safety
+
+
+
+CP database -  
+
+AP database - 
+
+CA database - 

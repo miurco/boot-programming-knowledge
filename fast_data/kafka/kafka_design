@@ -1,0 +1,27 @@
+
+Motivation(How it started)
+==========================
+
+Act as a unified platform for handling all the real time data feeds a large company might have.
+This would mean the follwoing:
+
+main parameters wanted(
+      high-throughput, 
+			large data block,
+			low-latency,
+      support partitioned, distributed, real-time processing >> led to partitioning and consumer model
+			)
+
+These use cases led to a disign with uique elements, more akin to a database log than a traditional messaging system. Some elements of the design.
+
+
+Persistence
+Efficiency
+The Producer
+The Consumer
+Message Delivery Semantics
+Replication
+Log Compaction
+
+
+

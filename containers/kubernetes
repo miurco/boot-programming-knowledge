@@ -1,0 +1,45 @@
+Kubernetes
+
+
+Control Plane Processes(The Brain)
+----------------------------
+
+kube-apiserver - REST API server. Everything goes through this. It's the only component that talks to etcd.
+etcd - A distributed key-value database. This holds the entire cluster state.
+kube-scheduler - 
+kube-controller-manager - Runs control loops(Deployment controller, ReplicaSet controller, etc.) Each controller watches etcd via API server and takes action when actual state differ from desired state
+
+
+Node Processes(The Workers)
+----------------------------
+kubelet - The agent that runs on each node. It watches the API server for PODS assigned to its NODE, tells the container runtime to start/stop containers, and reports status back.
+kube-proxy - Maintains iptables/ipvs rules for Service networking. When you create a Service, kube-proxy configures the kernel networking to route the traffic.
+Container-runtime - The actual thing running containers(containerd, CRI-O). Kubelet talks to it via CRI (Container Runtime Interface)
+
+
+How to run kubernetes locally ?
+-----------------------------
+
+As you have only one node(your machine ...) you need a way to create virtual nodes.
+Docker is quite good for this.
+
+
+minikube start --driver=podman 
+minikube start --driver=docker
+minikube start --driver=hyperkit 
+minikube start --driver=qemu 
+minikube start --driver=none, Runs Kubernetes directly on your host-no containers or VMs. 
+
+
+kind: Always needs Docker/Podman
+minikube: Can use Docker, VMs, Podman, or bare-metal.
+
+
+Production/Cloud
+---------------------
+EKS, GKE, AKS
+OpenShift: Enterprise Kubernetes platform by Red Hat
+Rancher: Multi-cluster Kubernetes management
+
+
+

@@ -1,0 +1,35 @@
+If Reg expressions are subroutine Then what language are they written in ???
+
+
+Don't know the name ofthe language but it has lot of dialects
+
+
+	BRE - POSIX 1003.2 ed ,sed, grep
+	ERE - GNU extended regular expressions, egrep, gawk, Notepad++, vile, Tcll
+	EMACS - Emacs/Elisp regular expressions, emacs
+	VIM - Vim/Vimscript regular expressions, vim
+	PCRE - .NET runtime, Delphi, Java, Python, etc
+
+
+
+                              BRE
+                               |
+                               |
+                               |
+                              _|_
+                              \ /
+                               ' 
+                VIM  <|------ ERE --------|> EMACS  
+                  \            |             /
+                   \           |            / 
+                    \          |           / 
+                     \         |          / 
+                      \        |         / 
+                       \       |        / 
+                        \      |       / 
+                         \     v      / 
+                          \          / 
+
+ 
+                              PCRE
+                            

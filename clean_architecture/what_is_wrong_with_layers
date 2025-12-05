@@ -1,0 +1,59 @@
+
+What is wrong with Layers  ?
+
+
+
+
+1) Service has access to the Entinty, and if it has then it will use. The temptation is quite high.
+
+2) This leads to a strong coupling between Service and Persistence - business services uses the persistence model as their business model and have to deal not only with domain logic but also with eager versus lazy loading, database transactions, flushing caches, and similar housekeeping tasks.
+
+
+					+------------------------------------------------------+
+					|               Domain                                 |
+          |                                                      |
+          |                                                      |
+					|          +--------Service ------------+              |
+					|          |                            |              |
+					+----------+----------------------------+--------------+
+                     |                            |
+                     |                            |
+           +---------|----------------------------|--------------+
+           |         v                            v              |
+           |      Entity <-------------------- Repository        |
+           |                                                     |
+           |                  Persistence                        |
+           +-----------------------------------------------------+
+
+
+Divergent change - having to change seemingly unrelated parts of the code to implement a single feature.
+
+
+
+                  Order
+
+                    Server: take/delivers/
+                    Online Customer: adds menu item to an order/
+                    Bartender: take/prepare/delivers/
+                    Chef: prepare/inspect/(notify server)
+                    Driver: pick/delivers/
+
+
+
+
+                                                      Payment
+                                                         Server, Online Customer, Bartender, Driver: take payment of an order
+                                                         
+
+
+                 Reservation
+                   Host: make/check/
+                   Online Customer: make
+
+
+
+
+
+
+
+

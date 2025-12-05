@@ -1,0 +1,59 @@
+
+
+
+| Lock type      | Another shared lock | Another exclusive lock |
+|----------------+---------------------+------------------------|
+| Shared lock    | YES                 | NO                     |
+|----------------+---------------------+------------------------|
+| Exclusive lock | NO                  | NO                     |
+|----------------+---------------------+------------------------|
+
+
+Shared lock - multiple transactions can aquire lock upon a row.
+Exclusive lock - only one transaction can aquire lock upon the row
+
+
+|---|
+| A |
+|---|
+| B |
+|---|
+
+
+
+| Time sequence | Tx1    | Tx2    | Tx3      | Desc                                                              |
+|---------------+--------+--------+----------+-------------------------------------------------------------------|
+|               | BEGIN  |        |          | Begin of Tx1                                                      |
+|---------------+--------+--------+----------+-------------------------------------------------------------------|
+| T1            | read A |        |          | Tx1 put a shared lock and release it immediately  after read      |
+|---------------+--------+--------+----------+-------------------------------------------------------------------|
+| T2            |        | BEGIN  |          | Begin of Tx2                                                      |
+|---------------+--------+--------+----------+-------------------------------------------------------------------|
+| T3            |        | read A |          | Tx2 put a shared lock on A record, it's allowed                   |
+|---------------+--------+--------+----------+-------------------------------------------------------------------|
+| T4            |        |        | update A | Tx3 requires exclusive lock, no other reads(shared locks) allowed |
+|               |        |        |          | However the Tx3 should wait for Tx2 and Tx1 to release aquired    |
+|               |        |        |          | shared locks.                                                     |
+|---------------+--------+--------+----------+-------------------------------------------------------------------|
+
+
+
+
+Dead lock case that is not happening with OCC
+
+| T1      | T2      |
+|---------+---------|
+| read A  | read B  |
+|---------+---------|
+| write B | write A |
+|---------+---------|
+| commit  | commit  |
+
+                                                                         
+
+Related things to current file:
+  - see Two phase locking protocol(2PL)
+  - see how optimistic concurrency controll(OCC) could be implemented with this locks
+  - see hoe pesimistic concurrency controll(PCC) could be implemented with this locks
+
+

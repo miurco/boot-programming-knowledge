@@ -1,0 +1,48 @@
+Microkernel architecture aka as plug-in architecture pattern
+
+
+This is a way to build modular monolitic architecture
+
+
+
+                                          +-------------------------+
+           +-----------------+            |                         |
+           |                 |            |                         |
+           | Plug in         | -----------|                         |
+           +-----------------+            |                         |
+                                          |                         |
+                                          |                         |
+           +-----------------+            |     Core System         |
+           |                 |            |                         |
+           | Plug in         | -----------|                         |
+           +-----------------+            |                         |
+                                          |                         |
+                                          |                         |
+                                          |                         |
+                                          +-------------------------+
+
+
+Core System - minimal functionality to run system
+
+Plug in - standalone independent module
+
+example of application that has a microkernel architecture: eclipse, browsers
+
+
+
+                                               +------------------------------------+
+                                               |                                    |
+                                               |                                    |
+                                               |                                    |
+                                               |      +-----------------------+     |
+                             plugin------------|      |  Registry             |     |----------plugin
+                                               |      |                       |     |
+                                               |      +-----------------------+     |
+                                               |                                    |
+                                               |                                    |
+                                               |                                    |
+                                               |                                    |
+                                               |                                    |
+                                               |                                    |
+                                               |                                    |
+                                               +------------------------------------+

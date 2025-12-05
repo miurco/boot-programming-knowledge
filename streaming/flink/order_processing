@@ -1,0 +1,39 @@
+Flink provides several mechanisms to maintain order while parallelizing [ TASKS ]
+
+Within each [TASK] Flink processes events sequentially, preserving order for that key
+
+a) Keyed Streams
+Example: If your key is tied to a particular user(e.g a stream of banking transactions), you can use keyBy(userId)
+to parallelize the stream while maintaining the order for each user.
+
+
+b) Event Time and Watermarks
+Flink uses event time(timestamps embedded in events) and watermarks(indicator of event progress) to manage out of order data
+By assining timestamps and setting watermarks appropriate, Flink can reorder events within a bounded delay(e.g a few seconds) 
+Example: A stream of log events from multiple servers, where logs are slightly out of order but must be processed sequentially after correction.
+
+
+c) Serialization of Operators
+If parallelization is not possible (e.g strict global ordering is required), you can configure a stream to run with parallelism=1 for certain stages of the job.
+
+
+d) Chaining Operators
+Flink allows [ OPERATORS ] to be chained together in a single task to avoid shuffling data between nodes.
+
+Examples
+
+a) Keyed Streams
+
+DataStream<Event> stream = env.fromSource(source, WatermarkStrategy.nowaterMarks(), "Event Source")
+// keyBy ensures that all events with the same key go to the same task and are processed in order
+DataStream<Event> keyedStream = stream.keyBy(event -> event.getUserId()).process(new EventProcessor());
+
+
+c) Single Parallelism
+
+DataStream<Event> stream = env.fromSource(source, WatermarkStrategy.nowaterMarks(), "Event Source")
+stream.process(new EventProcessor).setParallelism(1);
+
+
+
+

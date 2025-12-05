@@ -1,0 +1,34 @@
+
+
+RabbitMq: Less responsability on conusmer side
+Kafka: More responsability on consumer side
+   1) Check if ttl of message is expired, if so disconsider it
+	 2) Move the "pointer", in many case it is automatically
+
+
+Kafka: is a pull model. The consumer is asking for the messages when he is ready to process.
+RabbitMq: is a push model
+
+
+RabbitMq: is good for complex routing.
+Kafka: is good for high volume of data at speed.
+
+
+RabbitMq: Is not seen like a persistence.
+Kafka: Is persistent, journalling
+
+
+Kafka use cases: 
+1) High volume of data
+2) Applications that requires to have a history
+3) Event Sourcing
+4) Stream processing and multi-stage pipeline
+
+
+RabbitMq use cases:
+1) Applications that are based on protocols such as STOMP, MQTT
+	 This allows interoperability, it allows STOMP clients to talk to any message broker supporting this protocol
+2) Granularity control of consistency
+3) Complex message routing
+4) Different type of consumers
+

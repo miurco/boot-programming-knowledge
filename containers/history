@@ -1,0 +1,68 @@
+https://www.techtarget.com/searchitoperations/tip/A-breakdown-of-container-runtimes-for-Kubernetes-and-Docker
+
+
+                              +-------+
+                              |       |
+         +-------------+      |       |                +-----------+
+         |  Kubernetes |      | CRI   |------+-------> | CRI-O     |---+                                                       container
+         +-------------+      |       |      |         +-----------+   |         +-----------+      +----------+
+                              |       |      |                         +-------> |           |      |          |
+                              |       |      |                                   | OCI spec  |      |   runc   |
+                              +-------+      |                         +-------> |           |      |          |
+                                             |                         |         +-----------+      +----------+
+         +------------+                      |         +-----------+   |
+         |   Docker   |                      +-------> |containerd |---+                                                       container
+         +------------+                                +-----------+
+
+
+
+
+                                                              containerd and CRI-O
+                            CRI, standardized                 are CRI compliant container
+                            Kubernetes API that               runtimes
+                            defines how kubernetes
+                            interacts with container
+                            runtimes
+
+
+
+
+
+
+
+
+Kubernetes is not Docker
+
+Container 
+Container Engine, Docker
+Container Runtime
+Standartization, Container Images, OCI
+Orchestration, Kubernetes has to handle an array of container image formats
+Orchestration, Kubernetes does not use docker 
+Kubernetes don't rely anymore on Docker runtime, it creates its own, CRI-O
+CRI-O turns Kubernetes into a CONTAINER ENGINE that support runc and Kata Containers as container runtimes for Kubernetes pods
+
+
+Containers require a container engine
+Container engine - general software platform that supports container use.
+Docker, CRI-O, RKT and LDX.
+
+
+The CONTAINER ENGINE takes the user input, interacts with a container orchestrator, loads the container image file(from a repository)
+and prepare storage to run the container. Finally, it calls and hands off the container to a CONTAINER RUNTIME to start and manage 
+the container's deployment.
+
+
+CONTAINER RUNTIME - a low level component of a CONTAINER ENGINE that mounts the container and works with the OS kernel to start and support the 
+containerization process. For an OS such as Linux, the runtime would set up cgroups, set SELinux policy, set AppArmor rules and so on.
+The most common runtime is runC, but other runtime containers include crun, railcar and Kata Containers.
+
+
+Standartization is important. Several Container Images formats, the OCI has emerged as a popular and accepted standard for container images and runtimes
+OCI uses runC.
+
+
+Your runtime should be OCI compatible, Kubernetes can deal only with OCI compatible container runtimes
+
+Kubernetes Container Runtime Interface(CRI) provides an API that connects Kubernetes to container runtime.
+

@@ -1,0 +1,14 @@
+
+ Type coercion
+--------------
+
+  Type conversion, type coercion, type casting, type juggling are different ways of changing an expression from
+  one data type to another.
+
+  Type conversion can take advantage of certain features of type hierarchies
+
+
+  Two important aspects of type conversion
+      1. whether it happens implicitly or explicitly
+      2. and whether the underlying data representation is converted from one representation
+          into another, or a given representation is merely reinterpreted as the represenation of another data type 

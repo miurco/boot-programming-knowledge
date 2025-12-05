@@ -1,0 +1,67 @@
+1990, the internet, induced creation of data sets of unprecedented size.
+
+Existing tools were neither scalable for these data sets nor cost-effective ==> forcing the creation of new tools and techniques.
+
+"Always on" nature  	raised the bar for availability and reliability
+
+
+Big data ecosystem emerged in response to the above
+
+
+A big data architecture requires three components:
+
+1. Storage
+2. Compute
+3. Control Plane                                      
+                                            
+                                            
+                                            
++------------------------------------------------------+
+|                       CAP                            |
+|                                                      |
+|                                                      |
+|    consistency                         availability  |
+|                                                      |
++------------------------------------------------------+
+
+
+                         For always-on internet it made sense to accept eventual consistency
+                         in exchange for greater availability
+
+
+
+                                                +----------------------------------------------------------------+
+                                                |                                                                |
+                       MapReduce Job --------   |        +-------------+    +-------------+    +--------------+  |
+                       Spark Job ------------   |        | NodeManager |    |             |    |              |  |
+                                                |        |             |    |             |    |              |  |
+                                                |        |             |    |             |    |              |  |
+                                                |        | DataNode    |    |             |    |              |  |
+                                                |        |             |    |             |    |              |  |
+                                                |        |             |    |             |    |              |  |
+                                                |        |  Disks      |    |             |    |              |  |
+                                                |        +-------------+    +-------------+    +--------------+  |
+           +------------------------------>     |                                                                |
+           |           +------------------>     |                                                                |
+           |           |                        |      HDFS                                                      |
+           |           |                        +----------------------------------------------------------------+
+           |           |
+         Flume       Sqoop                       A file is devided in blocks, each block is replicated across each DataNode.
+                                                 Once block written it can not be changed.
+                                                 It's more batch oriented ??? what if you application produces lots of events ???
+         +-----+     +----+
+         |Logs |     |Dbs |
+         +-----+     +----+                      Cause data is replicated on all nodes it offers high availability
+
+
+
+
+
+
+
+
+
+
+
+
+

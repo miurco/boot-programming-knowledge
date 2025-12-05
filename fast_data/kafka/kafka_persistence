@@ -1,0 +1,42 @@
+Don't fear the filesystem!
+--------------------------
+
+A properly designed disk structure can often be as fast as the network.
+
+NVM - Non Volatile Memory
+
+Linear writes and Random writes.
+Linear writes is much faster than Random writes.
+
+
+A modern operating system provides read-ahead and write-behind techniques that prefetch
+data in large block multiples and group smaller logical writes into large physical writes.
+
+READ-AHEAD LOG
+----------------------
+Read(from physical storage to a more efficient memory type) things you don't need. The subsequent reads might use "read-ahead" information
+
+
+WRITE-AHEAD LOG (WAL)
+-----------------------
+
+Family of techniques for providing atomicity and durability in database system
+
+The main functionality of WAL
+ a) allow the page cahe to buffer updates to disk-resident pages while ensuring durability semantics in the large context of a db system
+ b) persist all operations on disk until the cached copies of pages affected by this operations are synchronized on disk. Every operation that modifies the database state has to be logged on disk before the contents of associated pages can be modified
+ c) allow lost in-memory changes to be reconstructed from the operation log in case of a crash
+
+a.k.a Commit Log
+
+
+WRITE-BEHIND LOG (WBL)
+----------------------
+A logging mechanism 
+
+
+
+
+Copy-On-Write Engine
+Log structured Engine
+

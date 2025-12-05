@@ -1,0 +1,42 @@
+
+Fast Data Architecture
+
+Storage: Kafka
+Compute: Akka Streams, Kafka Streams, Flink, Spark
+Control Plane: Kerberos and Mesos, or Yarn
+
+Logs are different from Queues
+Event time and it's time processing are two different things
+Watermarks and Triggers - When processing should occur
+
+Criteria evaluating streaming engine for a given application
+  What is the latency budget ?
+  What is the volume of data to be processed per unit time ?
+  What kind of data processing will be required ?
+  How strong is the community around around the project ?
+
+
+
+                                        +--------------------+            +--------------------+
+                                        |   app              |            |   app              |
+                                        |                    |            |                    |
+                         Data           | +--------------+   |            | +--------------+   |
+                                        | | kafka stream |   |            | | kafka stream |   |
+                                        | +--------------+   |            | +--------------+   |
+                                        +--------------------+            +--------------------+
+
+
+                                                                 VS
+
+                                       +--------------------------------------------------------+
+                                       |                                                        |
+                                       |                                                        |
+                                       |                                                        |
+                          Data         |                       Spark/Flink                      |
+                                       |                                                        |
+                                       |                                                        |
+                                       |                                                        |
+                                       +--------------------------------------------------------+
+
+
+

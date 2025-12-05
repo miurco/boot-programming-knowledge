@@ -1,0 +1,10 @@
+
+
+
+Kafka is a distributed messaging system. The topic can be partitioned in mulptiple partitions
+
+
+How events are redistributed across partitions ?
+
+Events with same Key will be stored on the same partition
+Events with null Key are distributed randomly(defaults to round robin)

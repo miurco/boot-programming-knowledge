@@ -1,0 +1,36 @@
+
+Docker
+---------
+
+
+dockerd -> containerd -> runc
+
+dockerd 
+docker daemon, high level management service the handles the entire lifecycle of containers.
+accepts commands from the Docker CLI(docker run, docker stop, etc).
+uses contaird as an intermediary to manage container execution.
+
+containerd
+-------
+manages container lifecycle(pulling, snapshots, execution)
+
+runc
+-------
+the actual runtime that starts/stops the container process.
+a low-level container runtime resposible for creating and running containers - complies to OCI.
+run processes inside namespaces and cgroups, providing isolation.
+
+
+Kubernetes, the runtime stack looks like
+---------
+kubelet -> high level component that manages node-level operations
+Container Runtime Interface -> Middleware that allows Kubernetes to talk to different runtimes 
+CRI-O/containerd -> manages container lifecycle and storage,
+runc -> Low-level runtime that actually runs containers
+
+Note: Kubernetes does not use directly dockerd anymore.
+
+
+kubelet -> containerd(CRI plugin) -> runc
+
+kubelet -> CRI-O -> runc

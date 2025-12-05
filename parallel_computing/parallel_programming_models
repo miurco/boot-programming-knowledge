@@ -1,0 +1,75 @@
+
+In computing, a parallel programming model is an abstraction of parallel computer architecture, with which it is convenient to express algorithms and their composition in programs. The value of a programming model can be judged on its generality: how well a range of different problems can be expressed for a variety of different architectures, and its performance: how efficiently the compiled programs can execute.[1] The implementation of a parallel programming model can take the form of a library invoked from a sequential language, as an extension to an existing language, or as an entirely new language.
+
+Consensus around a particular programming model is important because it leads to different parallel computers being built with support for the model, thereby facilitating portability of software. In this sense, programming models are referred to as bridging between hardware and software.[2]
+
+                                                 +--------------------------+
+                +--------------------------------+Parallel Computing        |
+                |                                +--------------------------+
+                |
+                |  Parallel programming models is an abstraction of parallel computers(parallel computing) 
+                |
+                |
+         +------+----------------+
+         |  Programming Models   |
+         +---------------+-------+
+                         |
+                         |
+                         | <<Clasify>>
+                         |
+                         |           +-------------------+
+                         +-----------|Process Interaction|
+                         |           +-------------------+
+                         |
+                         |                                      +-----------------------+
+                         |                                      |Shared Memory          +--------> Posix Thread, OpenMP, two apis  
+                         |                                      +-----------------------+
+                         |
+                         |                                      +------------------------+
+                         |               Asynchronous <|--------+Message Passing         +-----------|> Synchronous
+                         |                                      +------------------------+                 |
+                         |                                                                                 +------|> CSP
+                         |                                      +------------------------+                             |
+                         |                                      |Implicit interaction    |                             +-----|> Go, Occam, Limbo
+                         |                                      +------------------------+
+                         |
+                         |          +------------------------+
+                         +----------|Problem Decomposition   |
+                                    +------------------------+
+
+                                                                   +----------------------+
+                          True parallelism only in MIMD CPUs       |Task Parallelism      |
+                                                                   +----------------------+
+
+                                                                   +----------------------+
+                                       SIMD, Distributed           |Data Parallelism       |
+                                                                   +----------------------+
+
+                                                                   +----------------------+
+                                                                   |Implicit Parallelism  |
+                                                                   +----------------------+
+
+
+
+
+ EXAMPLE PARALLEL PROGRAMMING MODELS
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Name                               | Class of interaction         | Class of decomposition | Example implementations                             |
++====================================+==============================+========================+=====================================================+
+| Actor model                        | Asynchronous message passing | Task                   | D, Erlang, Scala, SALSA                             |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Bulk synchronous parallel          | Shared memory                | Task                   | Apache Giraph, Apache Hama, BSPlib                  |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Communicating sequential processes | Synchronous message passing  | Task                   | Ada, Occam, VerilogCSP, Go                          |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Circuits                           | Message passing              | Task                   | Verilog, VHDL                                       |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Dataflow                           | Message passing              | Task                   | Lustre, TensorFlow, Apache Flink                    |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Functional                         | Message passing              | Task                   | Concurrent Haskell, Concurrent ML                   |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| LogP machine                       | Synchronous message passing  | Not specified          | None                                                |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+| Parallel random access machine     | Shared memory                | Data                   | Cilk, CUDA, OpenMP, Threading Building Blocks, XMTC |
++------------------------------------+------------------------------+------------------------+-----------------------------------------------------+
+
